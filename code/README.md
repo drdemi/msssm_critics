@@ -1,3 +1,7 @@
-# Code Folder 
+# Code
 
-Your code goes here. You could also replace the content of this file with something more meaningful
+Files:
+
+draw_field - draws a given field with a chosen method. text and circle plot methods implemented so far.
+apply_rule - applies a rule on a field. mod2 is implemented so far.
+test - sandpile model test.
