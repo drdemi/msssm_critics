@@ -34,7 +34,7 @@ stack_n = 0;
 %neighbour = zeros(1,neighbours+1);	% index = same as neighbour offsets, last neighbour value = current field
 
 for t=1:timesteps
-	disp(["time: " num2str(t) " / " num2str(timesteps)]);
+	disp(['time: ' num2str(t) ' / ' num2str(timesteps)]);
 
 	% choose random site
 	y=floor(unifrnd(1,height));
@@ -45,7 +45,7 @@ for t=1:timesteps
 
 	% save picture
 	draw_field(f,2);
-	print(["field" num2str(t) ".png"],"-dpng");
+	print(['field' num2str(t) '.png'],'-dpng');
 
 	% push site to stack
 	stack_n = 1;
@@ -60,12 +60,12 @@ for t=1:timesteps
 		y = stack_y(stack_n);
 		stack_n = stack_n - 1;
 
-		disp(["x " num2str(x) "; y " num2str(y)]);
+		disp(['x ' num2str(x) '; y ' num2str(y)]);
 
 		% check if overcritical
 		if (f(y,x) > critical_state)
 
-			disp("collapse!");
+			disp('collapse!');
 
 			% collapse
 			f(y,x) = f(y,x) - neighbours * collapse;
@@ -73,8 +73,8 @@ for t=1:timesteps
 			% check each neighbour
 			for n=1:neighbours
 
-				%disp("checking...");
-				disp(["n " num2str(n)]);
+				%disp('checking...');
+				disp(['n ' num2str(n)]);
 
 				% check boundary -> modify neighbour offsets
 				if (boundary == 1)				% no-boundary conditions (pack-man style)
@@ -91,7 +91,7 @@ for t=1:timesteps
 						neighbour_offset_x(n) = neighbour_offset_x(n) - width;
 					end	
 				end
-				%disp(["x " num2str(x+neighbour_offset_x(n)) "; y " num2str(y+neighbour_offset_y(n))]);
+				%disp(['x ' num2str(x+neighbour_offset_x(n)) '; y ' num2str(y+neighbour_offset_y(n))]);
 
 				% save neighbour value
 				%neighbour(n) = f(y+neighbour_offset_y(n),x+neighbour_offset_x(n));
@@ -108,9 +108,9 @@ for t=1:timesteps
 %					stack_y(stack_n+nn) = y + neighbour_offset_y(n) + neighbour_offset_y(nn);
 %				end
 			end
-		endif
-	endwhile
+        end
+    end
 
 	disp(f);
-	disp("");
+	disp('');
 end
