@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{sandpile_models}
+Alessandro~Vespignani Alain~Barrat and Stefano Zapperi.
+\newblock Fluctuations and correlations in sandpile models.
+\newblock September 1999.
+
+\bibitem{ca_and_soc}
+Michael Creutz.
+\newblock Cellular automata and self-organized criticality.
+\newblock November 1996.
+
+\bibitem{how_soc_works}
+Alessandro Vespignani and Alessandro Vespignani.
+\newblock How self-organized criticality works: A unified mean-field picture.
+\newblock June 1998.
+
+\end{thebibliography}

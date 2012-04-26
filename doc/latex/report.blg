@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: report.aux
+The style file: plain.bst
+Database file #1: bibliography.bib
+Warning--empty journal in sandpile_models
+Warning--empty journal in ca_and_soc
+Warning--empty journal in how_soc_works
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            509 strings with 4349 characters,
+and the built_in function-call counts, 701 in all, are:
+= -- 63
+> -- 33
+< -- 0
++ -- 13
+- -- 10
+* -- 34
+:= -- 135
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 14
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 30
+empty$ -- 52
+format.name$ -- 10
+if$ -- 135
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 20
+preamble$ -- 1
+purify$ -- 11
+quote$ -- 0
+skip$ -- 23
+stack$ -- 0
+substring$ -- 15
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 3
+while$ -- 6
+width$ -- 4
+write$ -- 29
+(There were 3 warnings)

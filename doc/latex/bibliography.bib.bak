@@ -1,0 +1,101 @@
+% This file was created with JabRef 2.6.
+% Encoding: Cp1252
+
+@ARTICLE{bouzoukas,
+  author = {Asterios Bouzoukas, BEng, MSc, MBA},
+  title = {New Approaches for Cooling Photovoltaic/Thermal (PV/T) Systems},
+  journal = {Thesis submitted to the University of Nottingham for the degree of
+	Doctor of Philosophy},
+  year = {2008},
+  owner = {demi},
+  timestamp = {2011.05.01}
+}
+
+@ARTICLE{burri,
+  author = {Matthias Burri},
+  title = {Untersuchungen zum Hybridsolarkollektor des Bauprojektes B35},
+  journal = {Semesterarbeit an der Professur für Gebäudetechnik},
+  year = {2010},
+  owner = {demi},
+  timestamp = {2011.03.03}
+}
+
+@ARTICLE{endbericht,
+  author = {Egorov Artemi, Lang Irina, Sauvin Laurent},
+  title = {Photovoltaik, Fokusprojekt SunCar 2011},
+  journal = {Endbericht},
+  year = {2011},
+  owner = {demi},
+  timestamp = {2011.05.07}
+}
+
+@ARTICLE{tyfocor,
+  author = {Tyforop Chemie GmbH},
+  title = {Tyfocor L},
+  journal = {Datenblatt},
+  year = {2009},
+  owner = {demi},
+  timestamp = {2011.05.01}
+}
+
+@BOOK{haeberlin,
+  title = {Photovoltaik, Strom aus Sonnenlicht für Verbundnetz und Inselanlagen},
+  publisher = {Electrosuisse Verlag},
+  year = {2010},
+  author = {Heinrich Häberlin}
+}
+
+@ARTICLE{pvtschiefer,
+  author = {S. Kropf},
+  title = {PV/T Schiefer, Optimierung der Energieeffizienz von Gebäuden durch
+	
+	
+	gegenseitige Ergänzung von Simulation und Messung am 
+	
+	Beispiel der Hinterlüftung gebäudeintegrierter Photovoltaik},
+  journal = {Institut für Hochbautechnik, ETH Zürich},
+  year = {2003},
+  owner = {demi},
+  timestamp = {2011.05.01}
+}
+
+@ARTICLE{pvtroadmap,
+  author = {Pascal Affolter, Wolfgang Eisenmann, Hubert Fechner, Matthias Rommel,
+	Anton Schaap, Henrik Sørensen, Yiannis Tripanagnostopoulos, Hubert
+	Zondag},
+  title = {PVT Roadmap, A European guide for the development
+	
+	and market introduction of PV-Thermal technology},
+  journal = {www.pvtforum.org},
+  year = {2005},
+  owner = {demi},
+  timestamp = {2011.05.01}
+}
+
+@ARTICLE{tripaetal,
+  author = {Y. Tripanagnostopoulos, M. Souliotis, R. Battisti, A. Corrado},
+  title = {Application Aspects of Hybrid PV/T Solar Systems},
+  journal = {University of Patras, University of Rome 'La Sapienza'},
+  year = {2003},
+  owner = {demi},
+  timestamp = {2011.05.01}
+}
+
+@ARTICLE{tespi,
+  title = {Scienza Industria Tecnologia},
+  journal = {http://www.scintec.it/ricerca/energia/tespiE.html},
+  year = {2009},
+  address = {http://www.scintec.it/ricerca/energia/tespiE.html},
+  owner = {demi},
+  timestamp = {2011.06.17},
+  url = {http://www.scintec.it/ricerca/energia/tespiE.html}
+}
+
+@BOOK{vdi,
+  title = {VDI-Wärmeatlas},
+  publisher = {Springer},
+  year = {2006},
+  owner = {demi},
+  timestamp = {2011.06.17}
+}
+

@@ -1,0 +1,172 @@
+%===========================================================================
+%  Template for SunCar Focus Project, based on IDSC Master Thesis Template
+%---------------------------------------------------------------------------
+%
+% Version 1
+%
+% 2010
+%
+%===========================================================================
+
+% to compile this file for the first time, run
+% latex, bibtex, latex, latex, dvips, ps2pdf
+
+\documentclass[11pt,a4paper]{report}
+
+% load the ethidsc package
+\usepackage[english]{ethidsc}         % New styles and commands 
+                                     % Options: - german or english
+
+% load some more packages
+\usepackage[latin1]{inputenc}        % encoding of tex files
+\usepackage[english]{babel}          % hyphenation
+\usepackage{amsmath}                 % Additional math functionality
+%\usepackage{amssymb}                 % Additional math functionality
+\usepackage{amsthm}                  % Additional math functionality
+\usepackage{graphicx}                % EPS figures
+\usepackage{fancyhdr}                % Headings
+\usepackage{pstricks,pst-plot,psfrag}% Post-script graphics
+\usepackage{multirow}                % Add functionality to tab. env.
+\usepackage{rotating}                % Rotate tables 90 degrees
+\usepackage{listings}                % Syntax specific code listing
+\usepackage{mcode}                   % to include matlab code
+%\usepackage{units}                   % Concise printing of units
+\usepackage{SIunits}
+\usepackage{longtable}         % Für Tabellen über mehrere Seiten
+\usepackage{pdfpages}           % um PDF Seiten einzubinden
+%\usepackage[authorformat=year,authorformat=italic,authorformat=and,titleformat=colonsep,titleformat=italic,commabeforerest]{jurabib} % for citations
+\usepackage{caption}
+\captionsetup{font={footnotesize}}
+%\renewcommand*{\jbcitationyearformat}[1]{#1}
+\usepackage[
+bookmarks=true,         % show bookmarks bar
+unicode=false,          % non-Latin characters in Acrobat's bookmarks
+pdftoolbar=true,        % show Acrobat's toolbar?
+pdfmenubar=true,        % show Acrobat's menu?
+pdffitwindow=false,     % window fit to page when opened
+pdfstartview={FitH},    % fits the width of the page to the window
+pdftitle={Energetische Optimierung eines Photovoltaikmoduls durch aktive Kuehlung},
+pdfauthor={Artemi Egorov},% title and author will be properties of the pdf
+pdfnewwindow=true,      % links in new window
+colorlinks=true,        % false: boxed links; true: colored links
+linkcolor=black,        % color of internal links
+citecolor=black,        % color of links to bibliography
+filecolor=black,        % color of file links
+urlcolor=black,         % color of external links
+breaklinks=true         % break links across lines
+]{hyperref}                          % Enable hyberrefs in PDF
+\usepackage{breakurl}                % fixes a problem of hyperref and
+                                     % makes urls break across lines
+
+%\usepackage[]{natbib}
+
+\usepackage{booktabs}
+ 
+\usepackage{chngpage}
+
+\usepackage[marginal,ragged]{footmisc} % fussnote: linksbündig, flattersatz
+
+\fancypagestyle{plain}
+
+% note: you can have more colorful links if you like
+%\hypersetup{
+%colorlinks=true,        % false: boxed links; true: colored links
+%linkcolor=red,          % color of internal links
+%citecolor=green,        % color of links to bibliography
+%filecolor=magenta,      % color of file links
+%urlcolor=cyan,          % color of external links
+%}
+
+
+
+%---------------------------------------------------------------------------
+
+%\setlength{\parindent}{0em}                   % Disable parindent
+\rhead[\nouppercase{\rightmark}]{\thepage}    % Special headings
+\lhead[\thepage]{\nouppercase{\leftmark}}     % Special headings
+\cfoot{}                                      % Special headings
+
+%---------------------------------------------------------------------------
+
+% customize the document with ethidsc commands
+
+%\input{frontpage} % include definitions for front page
+
+\declaration
+
+%===========================================================================
+\begin{document}
+
+% list non-cited references
+\nocite{ca_and_soc}
+\nocite{sandpile_models}
+\nocite{how_soc_works}
+%\nocite{abelian_sandpile_model}
+
+
+%---------------------------------------------------------------------------
+% Title page
+
+%\maketitle
+
+% include title page pdf
+%\includepdf[pages=1]{pdfs/titelblatt.pdf}
+\input{cover}
+
+\setboolean{@twoside}{true}  % change to two-side layout from here
+
+\startnewchapter
+
+% blank page
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
+
+\pagestyle{fancy}
+\pagenumbering{roman}
+
+% lesespalte 11.5 anstatt 12.5 [cm]
+\changepage{0cm}{-1cm}{0.5cm}{0.5cm}{0cm}{0cm}{0cm}{0cm}{0cm}
+
+%---------------------------------------------------------------------------
+% Preamble
+
+\include{preamble}
+
+\pagenumbering{arabic}
+\newpage
+
+%---------------------------------------------------------------------------
+% Chapters
+
+\include{chapter1}
+
+%\include{}
+%\startnewchapter
+
+
+
+
+%---------------------------------------------------------------------------
+% Literature
+% (create .bib files using, for example, the free application Jabref)
+% Compile your report in the following order: latex - bibtex - latex - latex
+%\startnewchapter
+\bibliographystyle{plain} % jurabib
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\begin{flushleft}
+\bibliography{bibliography}
+\end{flushleft}
+\thispagestyle{fancy}
+
+%---------------------------------------------------------------------------
+% Appendix
+\startnewchapter
+\appendix
+\include{appendix}
+ 
+
+
+\end{document}
+%===========================================================================

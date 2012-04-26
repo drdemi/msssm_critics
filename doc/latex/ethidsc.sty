@@ -1,0 +1,264 @@
+% Changed by SunCar Focus Project Team, 2010
+
+%==============================================================================
+% ETHIDSC -- (ethidsc.sty) Style file
+% A LaTeX package providing new style definitions and commands.
+% The ethidsc-package defines a title page and an info page for term papers
+% and master theses written at the Institute for Dynamic Systems and Control,
+% Eidgenössische Technische Hochschule Zürich (ETH).
+% Author: Eric A. Mueller
+%         Eidgenössische Technische Hochschule Zürich (ETH)
+%         Zurich, Switzerland
+%
+% Copyright (c) 2004 Eric A. Mueller
+% All rights reserved.
+%
+% ethidsc.sty,v.1.0 2009/29/05
+%==============================================================================
+\def\Presentation@Version{1.2}
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{ethidsc}[2009/29/05, v. \Presentation@Version]
+\typeout{providing new style definitions and commands ---}
+\typeout{Soren Ebbesen, ETHZ, Switzerland}
+\typeout{Adapted from ethimrt.sty by Eric M\"{u}ller, ETHZ, Switzerland, 2004/04/02}
+
+%------------------------------------------------------------------------------
+\newif\ifingerman
+\DeclareOption{german}{\global\ingermantrue}
+\DeclareOption{english}{\global\ingermanfalse}
+\ExecuteOptions{german}
+
+\newif\iffancyheadings
+\DeclareOption{fancy}{\global\fancyheadingstrue}
+\DeclareOption{notfancy}{\global\fancyheadingsfalse}
+\ExecuteOptions{fancy}
+
+\ProcessOptions
+
+%------------------------------------------------------------------------------
+% this command will make sure a subsequent chapter starts on a right page, and
+% the previous left page will be blank, unless it is part of the previous chapter.
+\newcommand{\startnewchapter}{
+\pagestyle{empty}
+\cleardoublepage
+\pagestyle{fancy}
+}
+
+%------------------------------------------------------------------------------
+\newcommand{\@subtitle}{}
+\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+
+\newcommand{\@subsubtitle}{}
+\newcommand{\subsubtitle}[1]{\gdef\@subsubtitle{#1}}
+
+\newcommand{\@type}{}
+\newcommand{\type}[1]{\gdef\@type{#1}}
+
+\newcommand{\@supervision}{}
+\newcommand{\supervision}[1]{\gdef\@supervision{#1}}
+
+\newcommand{\@studentA}{}
+\newcommand{\studentA}[1]{\gdef\@studentA{#1}}
+
+\newif\ifstudentB
+\newcommand{\@studentB}{}
+\newcommand{\studentB}[1]{\gdef\@studentB{#1}\studentBtrue}
+
+\newcommand{\@ethidA}{}
+\newcommand{\ethidA}[1]{\gdef\@ethidA{#1}}
+
+\newcommand{\@ethidB}{}
+\newcommand{\ethidB}[1]{\gdef\@ethidB{#1}}
+
+\newcommand{\@semesterA}{}
+\newcommand{\semesterA}[1]{\gdef\@semesterA{#1}}
+
+\newcommand{\@semesterB}{}
+\newcommand{\semesterB}[1]{\gdef\@semesterB{#1}}
+
+\newcommand{\@emailA}{}
+\newcommand{\emailA}[1]{\gdef\@emailA{#1}}
+
+\newcommand{\@emailB}{}
+\newcommand{\emailB}[1]{\gdef\@emailB{#1}}
+
+\newcommand{\@declaration}{}
+\newcommand{\declaration}{\gdef\@declaration{
+\ifingerman
+{\bf Erkl\"{a}rung betreffend Plagiaten: \\[1ex]}
+\ifstudentB
+Wir erkl\"{a}ren hiermit mit unserer Unterschrift, das Merkblatt Plagiat zur Kenntnis genommen, die vorliegende Arbeit selbst\"{a}ndig verfasst und die im betroffenen Fachgebiet \"{u}blichen Zitiervorschriften eingehalten zu haben.\\[3ex]
+\else
+Ich erkl\"{a}re mit meiner Unterschrift, das Merkblatt Plagiat zur Kenntnis genommen, die vorliegende Arbeit selbst\"{a}ndig verfasst und die im betroffenen Fachgebiet \"{u}blichen Zitiervorschriften eingehalten zu haben.\\[3ex]
+\fi
+Merkblatt Plagiat:\\[1.5ex]
+\url{http://www.ethz.ch/students/semester/plagiarism\_s\_de.pdf} 
+\\[6ex] 
+Z\"{u}rich, \the\day. \the\month. \the\year: \hrulefill
+
+\else
+
+{\bf Statement regarding plagiarism: \\[1ex]}
+\ifstudentB
+By signing this statement, we affirm that we have read the information notice on plagiarism, independently produced this paper, and adhered to the general practice of source citation in this subject-area.\\[3ex]
+\else
+By signing this statement, I affirm that I have read the information notice on plagiarism, independently produced this paper, and adhered to the general practice of source citation in this subject-area.\\[3ex]
+\fi
+Information notice on plagiarism:\\[1.5ex]
+\url{http://www.ethz.ch/students/semester/plagiarism\_s\_en.pdf} 
+\\[6ex] 
+Zurich, \the\day. \the\month. \the\year: \hrulefill
+\fi}}
+
+%------------------------------------------------------------------------------
+% Definition of title page
+
+\renewcommand{\maketitle}{
+
+\pagestyle{empty}
+
+\begin{center}
+%\hspace{0.15\textwidth}
+\parbox[c][\textheight][t]{0.99\textwidth}{
+\begin{center}
+
+\vspace*{-2.5cm}
+\begin{minipage}[c]{0.4\textwidth}
+\begin{flushleft}
+\hspace*{-2.5cm}
+\includegraphics[height=1.2cm]{pics/eth_logo.pdf}
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.4\textwidth}
+\begin{flushright}
+\hspace*{3.5cm}
+\includegraphics[height=2cm]{pics/suncar_logo.pdf}
+\end{flushright}
+\end{minipage}
+\vspace*{3.0cm}
+
+{\large \@studentA\if\@studentB\else \ \& \@studentB\fi}
+\vspace{1.5cm}
+
+{\Huge \bf \@title \par}
+\vspace{1.5cm} 
+
+{\Large \bf \@subtitle \par}
+\vspace{0.5cm}
+
+{\large \bf \@subsubtitle \par}
+\vspace{2cm}
+
+\begin{minipage}[l]{0.4\textwidth}
+\begin{flushleft}
+\hspace*{-1.3cm}
+\includegraphics[height=8cm]{pics/titelbild.pdf}
+\end{flushleft}
+\end{minipage}
+\vspace{1.5cm}
+
+%
+%{\large \bf \@type}\\[3ex]
+%\ifingerman
+%Eidgen\"{o}ssische Technische Hochschule (ETH) Z\"{u}rich \\
+%\else
+%Eidgen\"{o}ssische Technische Hochschule (ETH) Z\"{u}rich \\
+%\fi
+%\vspace{3.5cm}
+
+\ifingerman
+{\bf Betreuung} \\[1.5ex]
+\else
+{\bf Supervision} \\[1.5ex]
+\fi
+\@supervision
+
+%\vfill
+\vspace{1cm}
+\@date
+\today
+
+\end{center}
+}
+\hspace*{-0.24\textwidth} % this will center the title etc (accurate to about a millimeter)
+\end{center}
+
+\cleardoublepage
+}
+
+
+%------------------------------------------------------------------------------
+% Definition of info page
+
+\newcommand{\infopage}{
+\AtEndDocument{
+
+\pagestyle{empty}
+\cleardoublepage
+\setlength{\oddsidemargin}{1.5cm}
+\setlength{\parindent}{0em}
+
+\vspace*{-2cm}
+\hspace{-0.354cm}
+\includegraphics[height=2cm]{pics/eth_logo.pdf}
+{\sffamily Institut f\"{u}r Dynamische Systeme und Regelungstechnik Prof.~Dr.~R.~D'Andrea, Prof.~Dr.~L.~Guzzella}
+\vspace{1.5cm}
+
+\ifingerman
+{\bf Titel der Arbeit: \\[1ex]}
+{\LARGE \@title \\[1ex] \par}
+\else
+{\bf Title of work: \\[1ex]}
+{\LARGE \@title \\[1ex] \par}
+\fi
+
+\ifingerman
+{\bf Art der Arbeit und Datum: \\[1ex]}
+\@type, \@date\\[2.5ex]
+{\bf Betreuung: \\[1ex]}
+\@supervision
+\else
+{\bf Thesis type and date: \\[1ex]}
+\@type, \@date\\[2.5ex]
+{\bf Supervision: \\[1ex]}
+\@supervision
+\fi
+\vspace{1cm}
+
+\ifingerman
+{\bf \ifstudentB Studenten:\else Student: \fi}
+\else
+{\bf \ifstudentB Students:\else Student: \fi}
+\fi
+\begin{tabbing}
+\hspace*{3cm}  \= \kill
+Name: \> \@studentA \\
+E-mail: \> \@emailA \\
+Legi-Nr.: \> \@ethidA \\
+Semester: \> \@semesterA
+\end{tabbing}
+
+\if\@studentB \else
+\begin{tabbing}
+\hspace*{3cm}  \= \kill
+Name: \> \@studentB \\
+E-mail: \> \@emailB \\
+Legi-Nr.: \> \@ethidB \\
+Semester: \> \@semesterB
+\end{tabbing}
+\fi
+\vspace{1cm}
+
+\if\@declaration \else \@declaration \fi
+
+\normalsize 
+}
+}
+
+
+%------------------------------------------------------------------------------
+% Revision history
+% 
+% 2009/29/05 Adapted from ethimrt.sty,v 1.1 2004/04/02
+% June 2010 some changes, see readme
