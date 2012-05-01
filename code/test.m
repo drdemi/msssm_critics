@@ -9,29 +9,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % parameters
-width = 5;		% field size
-height = 5;
+width = 200;		% field size
+height = 200;
 neighbours = 4;		% neighbours to collapse to
 neighbour_offset_x = [-1 +1 0 0];
 neighbour_offset_y = [0 0 -1 +1];
 critical_state = 3;	% critical/max. number of grains before collapse
 collapse = 1;		% number of grains to collapse PER NEIGHBOUR
-timesteps = 100;	% simulation duration in steps (excl. avalanches)
-boundary = 1;		% 1 - infinite, no boundaries
-			% 2 - to be implemented...
+timesteps = 20000;	% simulation duration in steps (excl. avalanches)
+boundary = 2;		% 1 - infinite/continuous, no boundaries, like pac-man
+			% 2 - finite field, energy loss at boundaries, like a table
+			% 3 - ...
+
+make_pictures = false;	% draw and export all frames or not
+silent = true;		% produce no output (except time progress)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % define field
-f = zeros(height,width);
+f = floor(unifrnd(1,critical_state,height,width)); % this uses uniform distribution of random numbers
 
 % define stack for avalanches
 stack_x = 0;
 stack_y = 0;
 stack_n = 0;
 
-% temporary neighbour matrix
-%neighbour = zeros(1,neighbours+1);	% index = same as neighbour offsets, last neighbour value = current field
+% statistics
+avalanche_sizes = zeros(1, timesteps);
 
 for t=1:timesteps
 	disp(['time: ' num2str(t) ' / ' num2str(timesteps)]);
@@ -44,8 +48,10 @@ for t=1:timesteps
 	f(y,x) = f(y,x) + 1;
 
 	% save picture
-	draw_field(f,2);
-	print(['field' num2str(t) '.png'],'-dpng');
+	if (make_pictures)
+		draw_field(f,2);
+		print(['field' num2str(t) '.png'],'-dpng');
+	end
 
 	% push site to stack
 	stack_n = 1;
@@ -60,12 +66,17 @@ for t=1:timesteps
 		y = stack_y(stack_n);
 		stack_n = stack_n - 1;
 
-		disp(['x ' num2str(x) '; y ' num2str(y)]);
+		if (silent==false) 
+			disp(['x ' num2str(x) '; y ' num2str(y)]);
+		end
 
 		% check if overcritical
 		if (f(y,x) > critical_state)
 
-			disp('collapse!');
+			if (silent==false)
+				disp('collapse!');
+			end
+			avalanche_sizes(t) = avalanche_sizes(t) + 1;
 
 			% collapse
 			f(y,x) = f(y,x) - neighbours * collapse;
@@ -73,11 +84,13 @@ for t=1:timesteps
 			% check each neighbour
 			for n=1:neighbours
 
-				%disp('checking...');
-				disp(['n ' num2str(n)]);
+				if (silent==false)
+					disp(['n ' num2str(n)]);
+				end
 
-				% check boundary -> modify neighbour offsets
+				% check boundary
 				if (boundary == 1)				% no-boundary conditions (pack-man style)
+					% modify neighbour offsets
 					if (y+neighbour_offset_y(n) < 1)
 						neighbour_offset_y(n) = neighbour_offset_y(n) + height;
 					end
@@ -89,28 +102,56 @@ for t=1:timesteps
 					end
 					if (x+neighbour_offset_x(n) > width)
 						neighbour_offset_x(n) = neighbour_offset_x(n) - width;
-					end	
+					end
+
+					% add/transport grain to neighbour
+					f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
+
+					% push neighbour's neighbours to stack
+					stack_n = stack_n + 1;
+					stack_x(stack_n) = x + neighbour_offset_x(n);
+					stack_y(stack_n) = y + neighbour_offset_y(n);
+				elseif (boundary == 2)				% energy loss at boundary (table style)
+					% keep offsets, but check if outside of boundary
+					if ((y+neighbour_offset_y(n) < 1) | (y+neighbour_offset_y(n) > height) | (x+neighbour_offset_x(n) < 1) | (x+neighbour_offset_x(n) > width))
+						% outside of boundary...do nothing =)
+					else
+						% add/transport grain to neighbour
+						f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
+
+						% push neighbour's neighbours to stack
+						stack_n = stack_n + 1;
+						stack_x(stack_n) = x + neighbour_offset_x(n);
+						stack_y(stack_n) = y + neighbour_offset_y(n);
+					end
 				end
-				%disp(['x ' num2str(x+neighbour_offset_x(n)) '; y ' num2str(y+neighbour_offset_y(n))]);
-
-				% save neighbour value
-				%neighbour(n) = f(y+neighbour_offset_y(n),x+neighbour_offset_x(n));
-
-				% add/transport grain to neighbour
-				f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
-
-				% push neighbour's neighbours to stack
-				stack_n = stack_n + 1;
-				stack_x(stack_n) = x + neighbour_offset_x(n);
-				stack_y(stack_n) = y + neighbour_offset_y(n);
-%				for nn=1:neighbours
-%					stack_x(stack_n+nn) = x + neighbour_offset_x(n) + neighbour_offset_x(nn);
-%					stack_y(stack_n+nn) = y + neighbour_offset_y(n) + neighbour_offset_y(nn);
-%				end
 			end
         end
     end
 
-	disp(f);
-	disp('');
+	if (silent==false)
+		disp(f);
+		disp('');
+	end
 end
+
+% analyse avalanche sizes distribution
+avalanche_count=zeros(1,max(avalanche_sizes));
+for s=1:max(avalanche_sizes)
+ avalanche_count(s)=size(avalanche_sizes(avalanche_sizes==s),2)
+end
+avalanche_sizes
+avalanche_count
+
+% plot avalanche count vs size
+plot([1:max(avalanche_sizes)],avalanche_count,'marker','s')
+
+% fit the curve into power law distribution (f = c1*x^c2)
+xx=[1:max(avalanche_sizes)];
+yy=avalanche_count(1:end);
+[c,fval,info,output]=fsolve(@(c)((c(1).*xx.^c(2))-yy),[100,1])
+hold on;
+plot(xx,c(1).*xx.^c(2),'r');
+
+
+
