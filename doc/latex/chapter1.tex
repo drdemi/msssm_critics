@@ -1,4 +1,4 @@
-\chapter{to do list}
+\chapter{to do list, beta texts}
 \thispagestyle{fancy}
 
 
@@ -13,3 +13,38 @@
 \section{Simulation Results and Discussion}
 
 \section{Summary and Outlook}
+
+\section{Sandpile model}
+
+\subsection{Bak-Tang-Wiesenfeld sandpile model}
+
+The classical sandpile model represents a cellular automation describing a dynamical system following certain rules that can be described as follows.
+
+The field/lattice, which we choose to be two-dimensional, represents a sandpile. Each site on the lattice has a certain value $z$ that intuitively represents the height or slope of the sandpile at certain position described with the coordinates $x$ and $y$. At each time step, a number of grains of sand is placed on top of a random site, which increases its value by a given value, e.g. one. If the value of the site exceeds a critical value $z_c$ (e.g. three), the site collapses/topples and its grains are evenly distributed to its neighbours.
+
+In certain cases some of the adjascent sites will exceed the critical value too and the toppling process will continue until an equilibrium state is again reached. This series of collapsing sites is clasically described as an avalanche. The next grain is not placed until the equilibrium state is reached, meaning that the time scale of the random grain placement and of the development of avalanches are decoupled.
+
+The classical model description can mathematically be represented as follows.
+
+Initially, the lattice is empty:
+\[
+z(x,y) = 0 \quad\forall x, y
+\]
+Then, the value of a random site $x,y$ is increased:
+\[
+z(x,y) \to z(x_r,y_r) + 1
+\]
+If its value exceeds the critical value $z_c=3$, then it topples and distributes its grains to its neighbours:
+\[
+\begin{aligned}
+z(x,y) \overset{?}{>} 3 \Rightarrow & z(x,y) \to z(x,y)-4 \\
+ & z(x\pm 1,y) \to z(x\pm 1,y)+1 \\
+ & z(x,y\pm 1) \to z(x,y\pm 1)+1 \\
+\end{aligned}
+\]
+
+Clearly, many variations of the described model can be considered and can produce different results. The classical sandpile model, as originally described by Per Bak, Chao Tang and Kurt Wiesenfeld, represents the starting point of any further investigations considered in this paper.
+
+\subsection{Abelian sandpile model}
+
+

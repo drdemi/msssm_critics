@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.20)  27 APR 2012 01:15
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.20)  7 MAY 2012 21:52
 entering extended mode
  %&-line parsing enabled.
-**report
+**report.tex
 (./report.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -677,7 +677,7 @@ LaTeX Info: Redefining \pageref on input line 98.
 \openout4 = `report.out'.
 
 \AtBeginShipoutBox=\box41
- (./cover.tex <ETHlogo.png, id=51, 179.7114pt x 45.2892pt>
+ (./cover.tex <ETHlogo.png, id=63, 179.7114pt x 45.2892pt>
 File: ETHlogo.png Graphic file (type png)
 
 <use ETHlogo.png>
@@ -685,7 +685,7 @@ Overfull \hbox (38.09772pt too wide) in paragraph at lines 34--42
  [][] 
  []
 
-<addon_bucket_and_spade.png, id=52, 803.0pt x 676.5275pt>
+<addon_bucket_and_spade.png, id=64, 803.0pt x 676.5275pt>
 File: addon_bucket_and_spade.png Graphic file (type png)
 
 <use addon_bucket_and_spade.png>) [1
@@ -744,7 +744,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./chapter1.tex
 Chapter 1.
-)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -755,12 +754,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.142 \include{chapter1}
-                         [1
+l.26 
+      [1
 
 
 
-] (./report.bbl
+])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -771,10 +770,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \begin{thebibliography}{1}
-                               [2
-
-])
+l.142 \include{chapter1}
+                         [2] (./report.bbl
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -783,7 +780,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3
 
-] [4
+])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4
 
 ]
 \openout2 = `appendix.aux'.
@@ -800,25 +804,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 
+
 ] [6
 
 ]) (./report.aux (./preamble.aux) (./chapter1.aux) (./appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 12620 strings out of 495061
- 172664 string characters out of 1182621
- 279646 words of memory out of 3000000
- 15530 multiletter control sequences out of 15000+50000
- 12244 words of font info for 44 fonts, out of 3000000 for 9000
+ 12628 strings out of 495061
+ 172785 string characters out of 1182621
+ 280646 words of memory out of 3000000
+ 15535 multiletter control sequences out of 15000+50000
+ 12849 words of font info for 46 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,11n,43p,317b,382s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,11n,43p,578b,380s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/sha
 re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb>
-Output written on report.pdf (14 pages, 186317 bytes).
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on report.pdf (14 pages, 226740 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 107 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

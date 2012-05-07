@@ -50,6 +50,7 @@ At the end of the project we want to find the answer to these questions:
  * [1] How self-organized criticality works: A uniﬁed mean-ﬁeld picture; Alessandro Vespignani and Alessandro Vespignani; June 1998
  * [2] Fluctuations and Correlations in Sandpile Models; Alain Barrat, Alessandro Vespignani and Stefano Zapperi; September 1999
  * [3] Cellular automata and self-organized criticality; Michael Creutz; November 1996
+ * [4] The abelian sandpile, a mathematical introduction; Ronald Meester, Frank Redig and Dmitri Znamenski; April 2001
 
 
 ## Research Methods
