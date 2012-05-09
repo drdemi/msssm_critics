@@ -1,4 +1,5 @@
-function as = sandpile(f, neighbour, critical_state, collapse_per_neighbour, timesteps, boundary_type, make_pictures, silent)
+function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_neighbour,
+				timesteps, boundary_type, make_pictures, silent)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % sandpile simulation using stack algorithm for avalanche generation
@@ -14,15 +15,17 @@ function as = sandpile(f, neighbour, critical_state, collapse_per_neighbour, tim
 %	collapse_per_neighbour 	 number of grains to collapse
 %	timesteps 		 simulation duration in steps (excl. avalanches)
 %	boundary_type 		 type of boundary condition
-%					 1 - infinite/continuous, no boundaries, like pac-man
-%					 2 - finite field, energy loss at boundaries, like a table
+%					 1 - infinite/continuous, like pac-man
+%					 2 - energy loss at boundaries, table-like
 %					 3 - ...
 %	make_pictures 		 draw and export all frames or not
 %	silent 			 produces no output (except time progress) if true
 
 % OUTPUTS
-%	as			avalanche sizes for each timestep
-%
+%	as			avalanche sizes (topplings count) for each timestep (statistics)
+%	nc			size at avalanche-starting-site for eacg t
+%	at			avalanche lifetime for each t
+%	final			final field
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -45,6 +48,8 @@ function as = sandpile(f, neighbour, critical_state, collapse_per_neighbour, tim
 
 	% avalanche statistics
 	avalanche_sizes = zeros(1, timesteps);
+	av_begin_t = zeros(1,timesteps);
+	avalanche_lifetime = zeros(1,timesteps);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -54,7 +59,7 @@ function as = sandpile(f, neighbour, critical_state, collapse_per_neighbour, tim
 
 		% choose random site
 		y=floor(unifrnd(1,height));
-		x=floor(unifrnd(1,width));	% this uses uniform distribution of random numbers
+		x=floor(unifrnd(1,width));	% uniform distribution rnd
 
 		% place grain
 		f(y,x) = f(y,x) + 1;
@@ -69,6 +74,11 @@ function as = sandpile(f, neighbour, critical_state, collapse_per_neighbour, tim
 		stack_n = 1;
 		stack_x(1) = x;
 		stack_y(1) = y;
+
+		% save avalanche starting site
+		av_begin_x = x;
+		av_begin_y = y;
+		av_begin_t(t) = 0; % # topplings at avalanche starting site
 
 		% avalanche - work through stack
 		while (stack_n > 0)
@@ -93,6 +103,10 @@ function as = sandpile(f, neighbour, critical_state, collapse_per_neighbour, tim
 
 				% save avalanche size for statistics
 				avalanche_sizes(t) = avalanche_sizes(t) + 1;
+				if ((x==av_begin_x) & (y==av_begin_y))
+					% save # topplings at av starting site
+					av_begin_t(t) = av_begin_t(t) + 1;
+				end
 
 				% collapse/topple
 				f(y,x) = f(y,x) - neighbours * collapse;
@@ -136,7 +150,10 @@ function as = sandpile(f, neighbour, critical_state, collapse_per_neighbour, tim
 						elseif (boundary == 2)
 
 							% keep offsets, but check if outside of boundary
-							if ((y+neighbour_offset_y(n) < 1) | (y+neighbour_offset_y(n) > height) | (x+neighbour_offset_x(n) < 1) | (x+neighbour_offset_x(n) > width))
+							if ((y+neighbour_offset_y(n) < 1) |
+								(y+neighbour_offset_y(n) > height) |
+								(x+neighbour_offset_x(n) < 1) | 
+								(x+neighbour_offset_x(n) > width))
 								% outside of boundary...do nothing =)
 							else
 								% add/transport grain to neighbour
@@ -163,4 +180,10 @@ function as = sandpile(f, neighbour, critical_state, collapse_per_neighbour, tim
 
 	% return avalanche sizes
 	as = avalanche_sizes;
+
+	% return number of topplings at avalanche starting site
+	nc = av_begin_t;
+
+	% return final state
+	final = f;
 end

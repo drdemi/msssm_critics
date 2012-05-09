@@ -9,7 +9,11 @@
 \BOOKMARK [1][-]{section.1.5}{Simulation Results and Discussion}{chapter.1}
 \BOOKMARK [1][-]{section.1.6}{Summary and Outlook}{chapter.1}
 \BOOKMARK [1][-]{section.1.7}{Sandpile model}{chapter.1}
-\BOOKMARK [2][-]{subsection.1.7.1}{Bak-Tang-Wiesenfeld sandpile model}{section.1.7}
-\BOOKMARK [2][-]{subsection.1.7.2}{Abelian sandpile model}{section.1.7}
+\BOOKMARK [2][-]{subsection.1.7.1}{Bak-Tang-Wiesenfeld model}{section.1.7}
+\BOOKMARK [2][-]{subsection.1.7.2}{Abelian model}{section.1.7}
 \BOOKMARK [0][-]{section*.6}{References}{}
-\BOOKMARK [0][-]{appendix.A}{MATLAB-Code}{}
+\BOOKMARK [0][-]{appendix.A}{MATLAB/Octave-Code}{}
+\BOOKMARK [1][-]{section.A.1}{critical field}{appendix.A}
+\BOOKMARK [1][-]{section.A.2}{sandpile}{appendix.A}
+\BOOKMARK [1][-]{section.A.3}{avalanche distribution analysis}{appendix.A}
+\BOOKMARK [1][-]{section.A.4}{test sandpile}{appendix.A}

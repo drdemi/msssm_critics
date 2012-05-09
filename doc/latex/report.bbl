@@ -5,10 +5,21 @@ Alessandro~Vespignani Alain~Barrat and Stefano Zapperi.
 \newblock Fluctuations and correlations in sandpile models.
 \newblock September 1999.
 
+\bibitem{christensen}
+Kim Christensen.
+\newblock Self-organization in models of sandpiles, earthquakes, and flashing
+  fireflies.
+\newblock August 2002.
+
 \bibitem{ca_and_soc}
 Michael Creutz.
 \newblock Cellular automata and self-organized criticality.
 \newblock November 1996.
+
+\bibitem{sandpile_math}
+Frank~Redig Ronald~Meester and Dmitri Znamenski.
+\newblock The abelian sandpile; a mathematical introduction.
+\newblock April 2001.
 
 \bibitem{how_soc_works}
 Alessandro Vespignani and Alessandro Vespignani.

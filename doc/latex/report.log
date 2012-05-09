@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.20)  7 MAY 2012 21:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.20)  8 MAY 2012 16:10
 entering extended mode
  %&-line parsing enabled.
-**report.tex
+**report
 (./report.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -677,7 +677,7 @@ LaTeX Info: Redefining \pageref on input line 98.
 \openout4 = `report.out'.
 
 \AtBeginShipoutBox=\box41
- (./cover.tex <ETHlogo.png, id=63, 179.7114pt x 45.2892pt>
+ (./cover.tex <ETHlogo.png, id=79, 179.7114pt x 45.2892pt>
 File: ETHlogo.png Graphic file (type png)
 
 <use ETHlogo.png>
@@ -685,7 +685,7 @@ Overfull \hbox (38.09772pt too wide) in paragraph at lines 34--42
  [][] 
  []
 
-<addon_bucket_and_spade.png, id=64, 803.0pt x 676.5275pt>
+<addon_bucket_and_spade.png, id=80, 803.0pt x 676.5275pt>
 File: addon_bucket_and_spade.png Graphic file (type png)
 
 <use addon_bucket_and_spade.png>) [1
@@ -754,8 +754,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.26 
-      [1
+l.27 T
+      he classical model description can mathematically be represented as fo...
+[1
 
 
 
@@ -770,7 +771,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.142 \include{chapter1}
+l.143 \include{chapter1}
                          [2] (./report.bbl
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -794,6 +795,36 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./appendix.tex
 Appendix A.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 16.
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+(../../code/critical_field.m) (../../code/sandpile.m
+Overfull \hbox (28.80396pt too wide) in paragraph at lines 1--2
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 3--5
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 9--11
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 28--30
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.80368pt too wide) in paragraph at lines 34--35
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -805,28 +836,149 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 
-] [6
+]
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 40--42
+[][][][][][][][][] 
+ []
 
-]) (./report.aux (./preamble.aux) (./chapter1.aux) (./appendix.aux)) ) 
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 51--53
+[][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 55.
+(/usr/share/texmf-texlive/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+LaTeX Font Info:    Try loading font information for OML+pcr on input line 81.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlpcr.fd
+File: omlpcr.fd 
+)
+LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 81.
+
+Overfull \hbox (52.8042pt too wide) in paragraph at lines 121--122
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
+Overfull \hbox (57.60425pt too wide) in paragraph at lines 126--127
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (57.60425pt too wide) in paragraph at lines 129--130
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.8042pt too wide) in paragraph at lines 132--133
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.8042pt too wide) in paragraph at lines 135--136
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (326.40698pt too wide) in paragraph at lines 139--141
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (4.80371pt too wide) in paragraph at lines 149--150
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 150.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 150.
+
+Overfull \hbox (345.60718pt too wide) in paragraph at lines 157--159
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (9.60376pt too wide) in paragraph at lines 161--162
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.60376pt too wide) in paragraph at lines 162--163
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (../../code/avalanche_distribution_analysis.m
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 2--4
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 8--10
+[][][][][][][][][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]) (../../code/test_sandpile.m
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 1--3
+[][][][][][][][][] 
+ []
+
+)
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 13--28
+[][][][][][][][][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]) (./report.aux (./preamble.aux) (./chapter1.aux) (./appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 12628 strings out of 495061
- 172785 string characters out of 1182621
- 280646 words of memory out of 3000000
- 15535 multiletter control sequences out of 15000+50000
- 12849 words of font info for 46 fonts, out of 3000000 for 9000
+ 13367 strings out of 495061
+ 181707 string characters out of 1182621
+ 372728 words of memory out of 3000000
+ 15977 multiletter control sequences out of 15000+50000
+ 14003 words of font info for 50 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,11n,43p,578b,380s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on report.pdf (14 pages, 226740 bytes).
+ 38i,12n,44p,698b,1859s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/s
+hare/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mti10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on report.pdf (16 pages, 309647 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 546 PDF objects out of 1000 (max. 8388607)
+ 301 named destinations out of 1000 (max. 500000)
+ 163 words of extra memory for PDF output out of 10000 (max. 10000000)
 

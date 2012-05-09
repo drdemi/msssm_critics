@@ -16,11 +16,11 @@
 
 \section{Sandpile model}
 
-\subsection{Bak-Tang-Wiesenfeld sandpile model}
+\subsection{Bak-Tang-Wiesenfeld model}
 
 The classical sandpile model represents a cellular automation describing a dynamical system following certain rules that can be described as follows.
 
-The field/lattice, which we choose to be two-dimensional, represents a sandpile. Each site on the lattice has a certain value $z$ that intuitively represents the height or slope of the sandpile at certain position described with the coordinates $x$ and $y$. At each time step, a number of grains of sand is placed on top of a random site, which increases its value by a given value, e.g. one. If the value of the site exceeds a critical value $z_c$ (e.g. three), the site collapses/topples and its grains are evenly distributed to its neighbours.
+The field/lattice, which is chosen to be two-dimensional, represents a sandpile. Each site on the lattice has a certain value $z$ that intuitively represents the height or slope of the sandpile at certain position described with the coordinates $x$ and $y$. At each time step, a number of grains of sand is placed on top of a random site, which increases its value by a given value, e.g. one. If the value of the site exceeds a critical value $z_c$ (e.g. three), the site collapses/topples and its grains are evenly distributed to its neighbours.
 
 In certain cases some of the adjascent sites will exceed the critical value too and the toppling process will continue until an equilibrium state is again reached. This series of collapsing sites is clasically described as an avalanche. The next grain is not placed until the equilibrium state is reached, meaning that the time scale of the random grain placement and of the development of avalanches are decoupled.
 
@@ -45,6 +45,8 @@ z(x,y) \overset{?}{>} 3 \Rightarrow & z(x,y) \to z(x,y)-4 \\
 
 Clearly, many variations of the described model can be considered and can produce different results. The classical sandpile model, as originally described by Per Bak, Chao Tang and Kurt Wiesenfeld, represents the starting point of any further investigations considered in this paper.
 
-\subsection{Abelian sandpile model}
+\subsection{Abelian model}
+One important property which can be used to categorize different sandpile models is whether they behave in a commutative or \emph{abelian} way. In particular, this can be applied to the development of avalanches in the model described above: The question posed here is, whether an equilibrium state resulting from an avalanche depends on the way the avalanche is calculated. More precisely, it can be shown that any avalanche, being a sequence of topplings, always results in the same equilibrium state i.e. does not depend on the order, in which the topplings occur. The mathematical proof of this hypothesis is nicely presented in \cite{sandpile_math}.
 
+To illustrate this practical but not necessarily obvious fact, 
 
