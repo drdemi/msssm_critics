@@ -1,5 +1,4 @@
-function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_neighbour,
-				timesteps, boundary_type, make_pictures, silent)
+function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_neighbour, timesteps, boundary_type, make_pictures, silent)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % sandpile simulation using stack algorithm for avalanche generation
@@ -150,10 +149,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 						elseif (boundary == 2)
 
 							% keep offsets, but check if outside of boundary
-							if ((y+neighbour_offset_y(n) < 1) |
-								(y+neighbour_offset_y(n) > height) |
-								(x+neighbour_offset_x(n) < 1) | 
-								(x+neighbour_offset_x(n) > width))
+							if ((y+neighbour_offset_y(n) < 1) | (y+neighbour_offset_y(n) > height) | (x+neighbour_offset_x(n) < 1) | (x+neighbour_offset_x(n) > width))
 								% outside of boundary...do nothing =)
 							else
 								% add/transport grain to neighbour
@@ -186,4 +182,6 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 
 	% return final state
 	final = f;
+
+	at = 0;
 end
