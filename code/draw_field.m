@@ -32,10 +32,11 @@ function f = draw_field(a,b)
 
 		figure;
 		hold on;
+		h=size(a,1);
 		for i=1:size(a,1)
 			for j=1:size(a,2)
 				if (a(i,j)~=0)
-					plot(i,j,'color',clr(a(i,j)),'linestyle','none','marker','s','markersize',10)
+					plot(j,h-i,'color',clr(a(i,j)),'linestyle','none','marker','s','markersize',10)
                 end
 			end
 		end

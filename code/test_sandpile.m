@@ -6,9 +6,9 @@
 
 f = critical_field(200,200,3,true);
 
-[s,nc,ts,f] = sandpile(f, [-1 +1 0 0; 0 0 -1 +1], 3, 1, 5000, 1, false, true);
+[s,nc,ts,f] = sandpile(f, [-1 +1 0 0; 0 0 -1 +1], 3, 1, 5000, 2, false, true, 0.2);
 
-[a,b] = avalanche_distribution_analysis(s)
+[a,b,c,d] = avalanche_distribution_analysis(s,ts)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

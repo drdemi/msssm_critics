@@ -1,4 +1,4 @@
-function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_neighbour, timesteps, boundary_type, make_pictures, silent)
+function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_neighbour, timesteps, boundary_type, make_pictures, silent, driving_plane_reduction) 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % sandpile simulation using stack algorithm for avalanche generation
@@ -19,9 +19,15 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 %					 3 - ...
 %	make_pictures 		 draw and export all frames or not
 %	silent 			 produces no output (except time progress) if true
+%	driving_plane_reduction	 percentage of field close to the boundary
+%				 not to be affected by driving (putting grains)
+%				 = 0   => use whole field (default)
+%				 = 0.2 => put grains at least 0.2*width
+%				          and 0.2*height far away from boundary
+%				 > 0.5 => invalid [!]
 
 % OUTPUTS
-%	as			avalanche sizes (topplings count) for each timestep (statistics)
+%	as			avalanche sizes (topplings count) for each timestep
 %	nc			size at avalanche-starting-site for eacg t
 %	at			avalanche lifetime for each t
 %	final			final field
@@ -48,20 +54,31 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 	% avalanche statistics
 	avalanche_sizes = zeros(1, timesteps);
 	av_begin_t = zeros(1,timesteps);
-	avalanche_lifetime = zeros(1,timesteps);
+	avalanche_add = zeros(1,timesteps);	% = av_size - av_ltime
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% show starting field
+	if (silent==false) 
+		disp('starting from this field:');
+		disp(f);
+	end
 
 	for t=1:timesteps
 		% display time progress
 		disp(['time: ' num2str(t) ' / ' num2str(timesteps)]);
 
 		% choose random site
-		y=floor(unifrnd(1,height));
-		x=floor(unifrnd(1,width));	% uniform distribution rnd
+		y=floor(unifrnd(1,height*(1-2*driving_plane_reduction))+height*driving_plane_reduction);
+		x=floor(unifrnd(1,width*(1-2*driving_plane_reduction))+width*driving_plane_reduction);	% uniform distribution rnd
 
 		% place grain
 		f(y,x) = f(y,x) + 1;
+
+		% communicate
+		if (silent==false) 
+			disp(['random grain on x' num2str(x) ',y' num2str(y)]);
+		end
 
 		% save picture of field before collapsing (with active field)
 		if (make_pictures)
@@ -110,7 +127,10 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 				% collapse/topple
 				f(y,x) = f(y,x) - neighbours * collapse;
 
-				% check each neighbour
+				% count future topplings to be caused by this toppling
+				future_topplings = 0;
+
+				% add each neighbour to stack
 				for n=1:neighbours
 
 					% communicate
@@ -145,6 +165,11 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 							stack_x(stack_n) = x + neighbour_offset_x(n);
 							stack_y(stack_n) = y + neighbour_offset_y(n);
 
+							% count future topplings to be caused by this toppling
+							if (f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) == (critical_state+1))
+								future_topplings = future_topplings + 1;
+							end
+
 						% 2) energy loss at boundary (table style)
 						elseif (boundary == 2)
 
@@ -159,11 +184,33 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 								stack_n = stack_n + 1;
 								stack_x(stack_n) = x + neighbour_offset_x(n);
 								stack_y(stack_n) = y + neighbour_offset_y(n);
+
+								% count future topplings to be caused by this toppling
+								if (f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) == (critical_state+1))
+									future_topplings = future_topplings + 1;
+								end
 							end
 						end
 
 					%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 				end
+
+				% calculate additional topplings caused
+				if (future_topplings > 0)
+					avalanche_add(t) = avalanche_add(t) + future_topplings - 1;
+
+					% communicate additional topplings to come
+					if (silent==false)
+						disp(['this collapse generates ' num2str(future_topplings - 1) ' additional toppling(s)']);
+					end
+				else
+					% communicate additional topplings to come
+					if (silent==false)
+						disp(['this collapse generates no additional topplings']);
+					end
+				end
+
+				
 		end
 	    end
 
@@ -183,5 +230,6 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 	% return final state
 	final = f;
 
-	at = 0;
+	% return avalanche lifetimes
+	at = avalanche_sizes - avalanche_add;
 end
