@@ -1,6 +1,6 @@
 function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 	collapse_per_neighbour, timesteps, boundary_type, make_pictures, ...
-	silent, driving_plane_reduction) 
+	silent, driving_plane_reduction, var_grain) 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % sandpile simulation using stack algorithm for avalanche generation
@@ -27,6 +27,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 %				 = 0.2 => put grains at least 0.2*width
 %				          and 0.2*height far away from boundary
 %				 > 0.5 => invalid [!]
+%	var_grain		true/false - use random grain size [0...1]
 
 % OUTPUTS
 %	as			avalanche sizes (topplings count) for each timestep
@@ -40,7 +41,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 
 	width = size(f,2);
 	height = size(f,1);
-	neighbours = size(neighbour,2);		% number ofneighbours to collapse to
+	neighbours = size(neighbour,2);		% number of neighbours to collapse to
 	neighbour_offset_x = neighbour(1,:);	
 	neighbour_offset_y = neighbour(2,:);
 	collapse = collapse_per_neighbour;

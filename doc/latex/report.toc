@@ -2,7 +2,6 @@
 \contentsline {chapter}{Abstract}{i}{section*.1}
 \contentsline {chapter}{Acknowledgements}{iii}{section*.3}
 \contentsline {chapter}{\numberline {1}Introduction and Motivations}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}to do list}{1}{section.1.1}
 \contentsline {chapter}{\numberline {2}The Sandpile Model}{2}{chapter.2}
 \contentsline {section}{\numberline {2.1}Bak-Tang-Wiesenfeld Model}{2}{section.2.1}
 \contentsline {section}{\numberline {2.2}Parameters}{3}{section.2.2}
