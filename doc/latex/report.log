@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.20)  8 MAY 2012 16:10
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.20)  15 MAY 2012 22:12
 entering extended mode
  %&-line parsing enabled.
 **report
@@ -606,7 +606,9 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 .
 ) (./report.aux
-(./preamble.aux) (./chapter1.aux) (./appendix.aux))
+(./preamble.aux) (./chapter1_intro.aux) (./chapter2_model.aux)
+(./chapter3_implementation.aux) (./chapter4_results.aux)
+(./chapter5_summary.aux) (./appendix.aux))
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
@@ -677,7 +679,7 @@ LaTeX Info: Redefining \pageref on input line 98.
 \openout4 = `report.out'.
 
 \AtBeginShipoutBox=\box41
- (./cover.tex <ETHlogo.png, id=79, 179.7114pt x 45.2892pt>
+ (./cover.tex <ETHlogo.png, id=91, 179.7114pt x 45.2892pt>
 File: ETHlogo.png Graphic file (type png)
 
 <use ETHlogo.png>
@@ -685,7 +687,7 @@ Overfull \hbox (38.09772pt too wide) in paragraph at lines 34--42
  [][] 
  []
 
-<addon_bucket_and_spade.png, id=80, 803.0pt x 676.5275pt>
+<addon_bucket_and_spade.png, id=92, 803.0pt x 676.5275pt>
 File: addon_bucket_and_spade.png Graphic file (type png)
 
 <use addon_bucket_and_spade.png>) [1
@@ -740,10 +742,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ] [6
 
 ])
-\openout2 = `chapter1.aux'.
+\openout2 = `chapter1_intro.aux'.
 
- (./chapter1.tex
+ (./chapter1_intro.tex
 Chapter 1.
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -754,13 +757,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 T
-      he classical model description can mathematically be represented as fo...
-[1
+l.146 \include{chapter1_intro}
+                               [1
 
 
 
-])
+]
+\openout2 = `chapter2_model.aux'.
+
+ (./chapter2_model.tex
+Chapter 2.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -771,59 +777,53 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.143 \include{chapter1}
-                         [2] (./report.bbl
+l.32 
+      [2
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
 
-[3
-
-])
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[4
 
 ]
-\openout2 = `appendix.aux'.
 
- (./appendix.tex
-Appendix A.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 16.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3]
+
+pdfTeX warning: pdflatex (file ./pics/pic1_abelian.pdf): PDF inclusion: found P
+DF version <1.5>, but at most version <1.4> allowed
+<pics/pic1_abelian.pdf, id=175, 2645.63406pt x 3004.58669pt>
+File: pics/pic1_abelian.pdf Graphic file (type pdf)
+
+<use pics/pic1_abelian.pdf>)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4 <./pics/pic1_abelian.pdf>]
+\openout2 = `chapter3_implementation.aux'.
+
+ (./chapter3_implementation.tex
+Chapter 3.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 8.
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-(../../code/critical_field.m) (../../code/sandpile.m
-Overfull \hbox (28.80396pt too wide) in paragraph at lines 1--2
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 14.
 
+(/usr/share/texmf-texlive/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+LaTeX Font Info:    Try loading font information for OML+pcr on input line 28.
 
-Overfull \hbox (14.40381pt too wide) in paragraph at lines 3--5
-[][][][][][][][][] 
- []
-
-
-Overfull \hbox (14.40381pt too wide) in paragraph at lines 9--11
-[][][][][][][][][] 
- []
-
-
-Overfull \hbox (14.40381pt too wide) in paragraph at lines 28--30
-[][][][][][][][][] 
- []
-
-
-Overfull \hbox (4.80368pt too wide) in paragraph at lines 34--35
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][] 
- []
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlpcr.fd
+File: omlpcr.fd 
+)
+LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 28.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -835,32 +835,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 
-
 ]
-Overfull \hbox (14.40381pt too wide) in paragraph at lines 40--42
-[][][][][][][][][] 
- []
 
+pdfTeX warning: pdflatex (file ./pics/pic3_stack2.pdf): PDF inclusion: found PD
+F version <1.5>, but at most version <1.4> allowed
+<pics/pic3_stack2.pdf, id=217, 888.2184pt x 984.08223pt>
+File: pics/pic3_stack2.pdf Graphic file (type pdf)
 
-Overfull \hbox (14.40381pt too wide) in paragraph at lines 51--53
-[][][][][][][][][] 
- []
+<use pics/pic3_stack2.pdf>
 
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 55.
-(/usr/share/texmf-texlive/tex/latex/psnfss/ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)
-LaTeX Font Info:    Try loading font information for OML+pcr on input line 81.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/omlpcr.fd
-File: omlpcr.fd 
-)
-LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 81.
+[6 <./pics/pic3_stack2.pdf>]
 
-Overfull \hbox (52.8042pt too wide) in paragraph at lines 121--122
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+pdfTeX warning: pdflatex (file ./pics/pic2_stack1.pdf): PDF inclusion: found PD
+F version <1.5>, but at most version <1.4> allowed
+<pics/pic2_stack1.pdf, id=240, 504.41966pt x 479.1851pt>
+File: pics/pic2_stack1.pdf Graphic file (type pdf)
+
+<use pics/pic2_stack1.pdf>
+Overfull \hbox (33.604pt too wide) in paragraph at lines 99--101
+[][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -869,62 +867,75 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6]
-Overfull \hbox (57.60425pt too wide) in paragraph at lines 126--127
-[][][][][][][][][][][][][][][][][][][][] 
- []
+[7 <./pics/pic2_stack1.pdf>])
 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-Overfull \hbox (57.60425pt too wide) in paragraph at lines 129--130
-[][][][][][][][][][][][][][][][][][][][] 
- []
+[8]
+\openout2 = `chapter4_results.aux'.
 
-
-Overfull \hbox (52.8042pt too wide) in paragraph at lines 132--133
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (52.8042pt too wide) in paragraph at lines 135--136
-[][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (326.40698pt too wide) in paragraph at lines 139--141
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-] 
- []
-
-
-Overfull \hbox (4.80371pt too wide) in paragraph at lines 149--150
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][] 
- []
-
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 150.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omspcr.fd
-File: omspcr.fd 
+ (./chapter4_results.tex
+Chapter 4.
 )
-LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 150.
 
-Overfull \hbox (345.60718pt too wide) in paragraph at lines 157--159
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9
+
+
+
+]
+\openout2 = `chapter5_summary.aux'.
+
+ (./chapter5_summary.tex
+Chapter 5.
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10
+
+
+
+] (./report.bbl
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11
+
+])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12
+
+]
+\openout2 = `appendix.aux'.
+
+ (./appendix.tex
+Appendix A.
+(../../code/critical_field.m) (../../code/sandpile.m
+Overfull \hbox (427.20801pt too wide) in paragraph at lines 1--2
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-] 
+][][][][][][][] 
  []
 
 
-Overfull \hbox (9.60376pt too wide) in paragraph at lines 161--162
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (9.60376pt too wide) in paragraph at lines 162--163
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-) (../../code/avalanche_distribution_analysis.m
 Overfull \hbox (14.40381pt too wide) in paragraph at lines 2--4
 [][][][][][][][][] 
  []
@@ -940,14 +951,41 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7]) (../../code/test_sandpile.m
-Overfull \hbox (14.40381pt too wide) in paragraph at lines 1--3
+[13
+
+
+
+
+]
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 35--37
 [][][][][][][][][] 
  []
 
-)
-Overfull \hbox (14.40381pt too wide) in paragraph at lines 13--28
+
+Overfull \hbox (4.80368pt too wide) in paragraph at lines 41--42
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 47--49
 [][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 59--61
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (100.80469pt too wide) in paragraph at lines 72--73
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (225.60594pt too wide) in paragraph at lines 73--75
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
  []
 
 
@@ -956,29 +994,230 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]) (./report.aux (./preamble.aux) (./chapter1.aux) (./appendix.aux)) ) 
+[14]
+Overfull \hbox (52.8042pt too wide) in paragraph at lines 143--144
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (57.60425pt too wide) in paragraph at lines 148--149
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (57.60425pt too wide) in paragraph at lines 151--152
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.8042pt too wide) in paragraph at lines 154--155
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.8042pt too wide) in paragraph at lines 157--158
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (326.40698pt too wide) in paragraph at lines 161--163
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (33.604pt too wide) in paragraph at lines 168--169
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (144.00513pt too wide) in paragraph at lines 169--170
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.80371pt too wide) in paragraph at lines 176--177
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 177.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 177.
+
+Overfull \hbox (441.60815pt too wide) in paragraph at lines 177--178
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (345.60718pt too wide) in paragraph at lines 181--183
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (9.60376pt too wide) in paragraph at lines 185--186
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.60376pt too wide) in paragraph at lines 186--188
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.8042pt too wide) in paragraph at lines 188--189
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (163.20532pt too wide) in paragraph at lines 189--190
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.80371pt too wide) in paragraph at lines 190--191
+[][][][][][][][][][][][][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15]
+Overfull \hbox (19.20386pt too wide) in paragraph at lines 200--202
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (192.00562pt too wide) in paragraph at lines 204--205
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (33.604pt too wide) in paragraph at lines 209--210
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+) (../../code/avalanche_distribution_analysis.m
+Overfull \hbox (76.80444pt too wide) in paragraph at lines 1--2
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 2--4
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 8--10
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (33.604pt too wide) in paragraph at lines 26--27
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+Overfull \hbox (105.60472pt too wide) in paragraph at lines 51--53
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (105.60472pt too wide) in paragraph at lines 60--62
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (105.60472pt too wide) in paragraph at lines 76--78
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (105.60472pt too wide) in paragraph at lines 85--87
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][] 
+ []
+
+) (../../code/test_sandpile.m
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 1--3
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.40405pt too wide) in paragraph at lines 9--11
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.40381pt too wide) in paragraph at lines 13--15
+[][][][][][][][][] 
+ []
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17] [18
+
+
+]) (./report.aux (./preamble.aux) (./chapter1_intro.aux)
+(./chapter2_model.aux) (./chapter3_implementation.aux) (./chapter4_results.aux)
+(./chapter5_summary.aux) (./appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 13367 strings out of 495061
- 181707 string characters out of 1182621
- 372728 words of memory out of 3000000
- 15977 multiletter control sequences out of 15000+50000
- 14003 words of font info for 50 fonts, out of 3000000 for 9000
+ 13682 strings out of 495061
+ 186502 string characters out of 1182621
+ 391863 words of memory out of 3000000
+ 16035 multiletter control sequences out of 15000+50000
+ 14553 words of font info for 52 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,12n,44p,698b,1859s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/s
-hare/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mti10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on report.pdf (16 pages, 309647 bytes).
+ 38i,12n,75p,707b,1859s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc
+/dvips/base/8r.enc} </home/demi/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095
+.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/urw/c
+ourier/ucrr8a.pfb>
+Output written on report.pdf (26 pages, 407615 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 301 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 901 PDF objects out of 1000 (max. 8388607)
+ 523 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

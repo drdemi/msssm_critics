@@ -1,17 +1,20 @@
 \BOOKMARK [0][-]{section*.1}{Abstract}{}
 \BOOKMARK [0][-]{section*.3}{Acknowledgements}{}
 \BOOKMARK [0][-]{TOC.0}{Table of contents}{}
-\BOOKMARK [0][-]{chapter.1}{to do list, beta texts}{}
-\BOOKMARK [1][-]{section.1.1}{Individual contributions}{chapter.1}
-\BOOKMARK [1][-]{section.1.2}{Introduction and Motivations}{chapter.1}
-\BOOKMARK [1][-]{section.1.3}{Description of the Model}{chapter.1}
-\BOOKMARK [1][-]{section.1.4}{Implementation}{chapter.1}
-\BOOKMARK [1][-]{section.1.5}{Simulation Results and Discussion}{chapter.1}
-\BOOKMARK [1][-]{section.1.6}{Summary and Outlook}{chapter.1}
-\BOOKMARK [1][-]{section.1.7}{Sandpile model}{chapter.1}
-\BOOKMARK [2][-]{subsection.1.7.1}{Bak-Tang-Wiesenfeld model}{section.1.7}
-\BOOKMARK [2][-]{subsection.1.7.2}{Abelian model}{section.1.7}
-\BOOKMARK [0][-]{section*.6}{References}{}
+\BOOKMARK [0][-]{chapter.1}{Introduction and Motivations}{}
+\BOOKMARK [1][-]{section.1.1}{to do list}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{The Sandpile Model}{}
+\BOOKMARK [1][-]{section.2.1}{Bak-Tang-Wiesenfeld Model}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Parameters}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Abelian Model}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{Model Implementation in MATLAB/Octave}{}
+\BOOKMARK [1][-]{section.3.1}{Basic Sandpile Code}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Simple Avalanche Code}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Optimization of Avalanche Code}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{Statistics}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{Simulation Results}{}
+\BOOKMARK [0][-]{chapter.5}{Summary and Outlook}{}
+\BOOKMARK [0][-]{section*.10}{References}{}
 \BOOKMARK [0][-]{appendix.A}{MATLAB/Octave-Code}{}
 \BOOKMARK [1][-]{section.A.1}{critical field}{appendix.A}
 \BOOKMARK [1][-]{section.A.2}{sandpile}{appendix.A}

@@ -12,4 +12,6 @@ f = critical_field(200,200,3,true);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+% to do: continuous grain placing (0...1) à la grain size
+%
+% 

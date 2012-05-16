@@ -130,7 +130,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 				% count future topplings to be caused by this toppling
 				future_topplings = 0;
 
-				% add each neighbour to stack
+				% look at every neighbour
 				for n=1:neighbours
 
 					% communicate
@@ -160,7 +160,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 							% add/transport grain to neighbour
 							f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
 
-							% push neighbour's neighbours to stack
+							% push neighbour to stack
 							stack_n = stack_n + 1;
 							stack_x(stack_n) = x + neighbour_offset_x(n);
 							stack_y(stack_n) = y + neighbour_offset_y(n);

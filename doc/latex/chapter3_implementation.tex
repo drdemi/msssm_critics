@@ -1,0 +1,153 @@
+\chapter{Model Implementation in MATLAB/Octave}
+\thispagestyle{fancy}
+
+\subsubsection{Note on Code and Programming Sustainability}
+In order to produce  ``sustainable'' code and to share the spirit of independency coming from the open-source community, the coded routines were tested in MATLAB and in Octave (one of its open-source clones). The source code can be found in Appendix \ref{chp:matlab}.
+
+\section{Basic Sandpile Code}
+First, a lattice/field is generated using uniformly distributed random numbers from 0 to $z_c$ (\mcode{critical_state}). This is done in order to start with a potentially critical field and not to place single grains of sand until a site gets critical.
+\begin{lstlisting}
+f = floor(unifrnd(0,critical_state+1,height,width));
+\end{lstlisting}
+Another interesting starting point is a \emph{uniform} critical field, where every site is either 0 or $z_c$.
+\begin{lstlisting}
+f = floor(unifrnd(0,2,height,width))*critical_state;
+\end{lstlisting}
+
+When the field is ready, a global loop runs through a defined number of timesteps, placing a grain on a random site, checking if the site becomes active and if so, computing the resulting avalanche.
+\begin{lstlisting}
+for t=1:timesteps
+	% choose random site
+	y=floor(unifrnd(1,height));
+	x=floor(unifrnd(1,width));
+
+	% place grain
+	f(y,x) = f(y,x) + 1;
+
+	% check if overcritical/active
+	if (f(y,x) > critical_state)
+		% avalanche code here
+		% ...
+	end
+end
+\end{lstlisting}
+
+\section{Simple Avalanche Code}
+...ASDF...
+
+\section{Optimization of Avalanche Code}
+The simple avalanche code checks the whole field including the fields, that cannot possibly be affected by the avalanche. It can therefore be optimized, for example using a LIFO data structure -- a \emph{stack}. The coordinates of very site that needs to be checked are placed on the stack, so that the computation of the avalanche consists of working through the stack and toppling all the active sites in it. During their toppling, their neighbours are again put on the stack, which makes the procedure dynamical and not easily comprehensive. The algorithm is illustrated in figure \ref{pics:stack2}.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.5\textwidth]{pics/pic3_stack2.pdf}
+\caption[]{using a stack for avalanche calculation}
+\label{pics:stack2}
+\end{figure}
+
+Considering the example from figure \ref{pics:abelian}, the stack algorithm results in the following sequence:
+\begin{enumerate}
+ \setcounter{enumi}{-1}
+ \item push C3
+ \item pop C3, topple, push its neighbours (C2,C4,B3 and D3) to stack
+ \item pop B3, topple, push B2, B4, A3 and C3 to stack
+ \item pop B2, \ldots
+ \item pop C2, \ldots
+ \item pop B4, \ldots
+ \item pop C4, \ldots
+\end{enumerate}
+Figure \ref{pics:stack1} shows the states of the stack after each of these steps. To avoid confusion, only the active sites are shown here.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.5\textwidth]{pics/pic2_stack1.pdf}
+\caption[]{A sample sequence of stack states. The algorithm proceeds until the stack is empty.}
+\label{pics:stack1}
+\end{figure}
+
+The main loop including the stack feature looks like this:
+\begin{lstlisting}
+for t=1:timesteps
+	% choose random site
+	% ...
+
+	% place grain
+	% ...
+
+	% push site to stack
+	stack_n = 1;
+	stack_x(1) = x;
+	stack_y(1) = y;
+
+	% avalanche - work through stack
+	while (stack_n > 0)
+
+		% pop from stack
+		x = stack_x(stack_n);
+		y = stack_y(stack_n);
+		stack_n = stack_n - 1;
+
+		% check if overcritical/active
+		if (f(y,x) > critical_state)
+			% collapse/topple
+			f(y,x) = f(y,x) - neighbours * collapse;
+
+			% look at every neighbour
+			for n=1:neighbours
+				% add/transport grain to neighbour
+				f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = ...
+					f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
+
+				% push neighbour to stack
+				stack_n = stack_n + 1;
+				stack_x(stack_n) = x + neighbour_offset_x(n);
+				stack_y(stack_n) = y + neighbour_offset_y(n);
+			end
+		end
+	end
+end
+\end{lstlisting}
+
+
+\section{Statistics}
+Many different variables may be of interest for the statistical analysis of sandpile models. The easiest to implement is avalanche size:
+
+\begin{lstlisting}
+...
+
+% check if overcritical/active
+if (f(y,x) > critical_state)
+
+	% collapse/topple
+	f(y,x) = f(y,x) - neighbours * collapse;
+
+	% record statistics
+	avalanche_sizes(t) = avalanche_sizes(t) + 1;
+
+	...
+\end{lstlisting}
+
+Here, the number of avalanches is recorded at every time step by increasing the counter after each toppling that happens during the avalanche. After the main loop, the data is sorted and the distribution is fitted into a power-law distribution given by
+\[
+P(s) = a \cdot s^b
+\]
+where $P$ is the number of avalanches of size $s$. The coefficients $a$ and $b$ are determined using a simple solver that minimizes $a \cdot s^b-P(s)$.
+
+\begin{lstlisting}
+% count avalanche sizes - calculate distribution
+for s=1:max(avalanche_sizes)
+	avalanche_count(s) = size(avalanche_sizes(avalanche_sizes==s),2);
+end
+
+% filter zero values
+s = [1:max(avalanche_sizes)];
+P = avalanche_count(1:end);
+s = s(P>0);
+P = P(P>0);
+
+% fit into power-law
+[c,fval,info,output]=fsolve(@(c)((c(1).*s.^c(2))-P),[100,1]);
+a = c(1);
+b = c(2);
+
+\end{lstlisting}
