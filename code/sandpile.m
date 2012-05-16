@@ -1,4 +1,6 @@
-function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_neighbour, timesteps, boundary_type, make_pictures, silent, driving_plane_reduction) 
+function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
+	collapse_per_neighbour, timesteps, boundary_type, make_pictures, ...
+	silent, driving_plane_reduction) 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % sandpile simulation using stack algorithm for avalanche generation
@@ -69,8 +71,10 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 		disp(['time: ' num2str(t) ' / ' num2str(timesteps)]);
 
 		% choose random site
-		y=floor(unifrnd(1,height*(1-2*driving_plane_reduction))+height*driving_plane_reduction);
-		x=floor(unifrnd(1,width*(1-2*driving_plane_reduction))+width*driving_plane_reduction);	% uniform distribution rnd
+		y=floor(unifrnd(1,height*(1-2*driving_plane_reduction)) + ...
+			height*driving_plane_reduction);
+		x=floor(unifrnd(1,width*(1-2*driving_plane_reduction)) + ...
+			width*driving_plane_reduction);	% uniform distribution rnd
 
 		% place grain
 		f(y,x) = f(y,x) + 1;
@@ -158,7 +162,8 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 							end
 
 							% add/transport grain to neighbour
-							f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
+							f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = ...
+								f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
 
 							% push neighbour to stack
 							stack_n = stack_n + 1;
@@ -174,11 +179,15 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 						elseif (boundary == 2)
 
 							% keep offsets, but check if outside of boundary
-							if ((y+neighbour_offset_y(n) < 1) || (y+neighbour_offset_y(n) > height) || (x+neighbour_offset_x(n) < 1) || (x+neighbour_offset_x(n) > width))
+							if ((y+neighbour_offset_y(n) < 1) || ...
+							   (y+neighbour_offset_y(n) > height) || ...
+							   (x+neighbour_offset_x(n) < 1) || ...
+							   (x+neighbour_offset_x(n) > width))
 								% outside of boundary...do nothing =)
 							else
 								% add/transport grain to neighbour
-								f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
+								f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = ...
+									f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
 
 								% push neighbour's neighbours to stack
 								stack_n = stack_n + 1;
@@ -201,7 +210,9 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 
 					% communicate additional topplings to come
 					if (silent==false)
-						disp(['this collapse generates ' num2str(future_topplings - 1) ' additional toppling(s)']);
+						disp(['this collapse generates ' ...
+							num2str(future_topplings - 1) ...
+							' additional toppling(s)']);
 					end
 				else
 					% communicate additional topplings to come

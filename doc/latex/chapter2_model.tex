@@ -46,7 +46,14 @@ Different types of boundary conditions can be thought of:
  \item periodic: The system has no boundaries, i.e. toppling near the border is ``wrapped over''.
  \item mixed: E.g. the lattice is periodic in one dimension and has open boundaries in another dimension.
 \end{itemize}
-ASDF ILLUSTRATE DIFFERENT BOUNDARY CONDITIONS
+Figure \ref{pics:boundary} illustrates the first three basic types of boundary conditions.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.5\textwidth]{pics/pic4_boundary.pdf}
+\caption[]{Effect of different types of boundary conditions on a sample lattice (1): open (2), closed (3) and periodic (4)}
+\label{pics:boundary}
+\end{figure}
 
 \section{Abelian Model}
 One important property which can be used to categorize different sandpile models is whether they behave in a commutative or \emph{abelian} way. In particular, this can be applied to the development of avalanches in the model described above: The question posed here is, whether an equilibrium state resulting from an avalanche depends on the way the avalanche is calculated. More precisely, it can be shown that any avalanche, being a sequence of topplings, always results in the same equilibrium state i.e. does not depend on the order, in which the topplings occur. The mathematical proof of this hypothesis is nicely presented in \cite{sandpile_math}.
