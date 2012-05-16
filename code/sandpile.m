@@ -119,7 +119,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 
 				% save avalanche size for statistics
 				avalanche_sizes(t) = avalanche_sizes(t) + 1;
-				if ((x==av_begin_x) & (y==av_begin_y))
+				if ((x==av_begin_x) && (y==av_begin_y))
 					% save # topplings at av starting site
 					av_begin_t(t) = av_begin_t(t) + 1;
 				end
@@ -174,7 +174,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, collapse_per_
 						elseif (boundary == 2)
 
 							% keep offsets, but check if outside of boundary
-							if ((y+neighbour_offset_y(n) < 1) | (y+neighbour_offset_y(n) > height) | (x+neighbour_offset_x(n) < 1) | (x+neighbour_offset_x(n) > width))
+							if ((y+neighbour_offset_y(n) < 1) || (y+neighbour_offset_y(n) > height) || (x+neighbour_offset_x(n) < 1) || (x+neighbour_offset_x(n) > width))
 								% outside of boundary...do nothing =)
 							else
 								% add/transport grain to neighbour
