@@ -47,6 +47,8 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 	collapse = collapse_per_neighbour;
 	boundary = boundary_type;
 
+	picture_counter = 0;
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	% define stack for avalanches
@@ -85,10 +87,12 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 			disp(['random grain on x' num2str(x) ',y' num2str(y)]);
 		end
 
-		% save picture of field before collapsing (with active field)
+		% save picture of field before collapsing (incl. active field)
 		if (make_pictures)
 			draw_field(f,2);
-			print(['field' num2str(t) '.png'],'-dpng');
+			title(['random grain on x' num2str(x) ',y' num2str(y)]);
+			picture_counter=picture_counter+1;
+			print(['field' sprintf('%04.0f', picture_counter) '.png'],'-dpng');
 		end
 
 		% push site to stack
@@ -222,7 +226,13 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 					end
 				end
 
-				
+				% save picture of avalanche timestep
+				if (make_pictures)
+					draw_field(f,2);
+					title(['avalanche...']);
+					picture_counter=picture_counter+1;
+					print(['field' sprintf('%04.0f', picture_counter) '.png'],'-dpng');
+				end
 		end
 	    end
 

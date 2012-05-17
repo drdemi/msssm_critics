@@ -28,7 +28,7 @@ function f = draw_field(a,b)
 		% output using circle plot
 
 		% define colors
-		clr = ['k' 'r' 'g' 'b'];
+		clr = ['k' 'r' 'g' 'b' 'y' 'y' 'y'];
 
 		disp('ok');
 		figure;

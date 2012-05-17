@@ -1,0 +1,1 @@
+ffmpeg -r 12 -b 1800 -i field%04d.png movie.avi

@@ -151,3 +151,42 @@ a = c(1);
 b = c(2);
 
 \end{lstlisting}
+
+In order to implement statistics of avalanche lifetime in the stack code, the number of additional (i.e. more than one) topplings per timestep must be counted. The reason for this is that the stack algorhithm does not follow a timescale and therefore the number of timesteps taken by an avalanche cannot be counted directly. Therefore, the following equation is used:
+\[
+s = \sum _t n = \underbrace{\sum_t (n - 1)}_{a} + \sum _t
+\qquad \Rightarrow \sum _t = s - a
+\]
+where $s$ is the avalanche size, $t$ is the avalanche lifetime, $n$ is the number of topplings per timestep and $a$ is the total number of additional topplings. The neighbour-checking part of the stack loop looks like this:
+\begin{lstlisting}
+% count future topplings to be caused by this toppling
+future_topplings = 0;
+
+% look at every neighbour
+for n=1:neighbours
+
+	% add/transport grain to neighbour
+	% ...
+
+	% push neighbour to stack
+	% ...
+
+	% count future topplings to be caused by this toppling
+	if (f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) == (critical_state+1))
+		% i.e. if neighbour site becomes active
+		future_topplings = future_topplings + 1;
+	end
+
+end
+% calculate additional topplings caused
+if (future_topplings > 0)
+	avalanche_add(t) = avalanche_add(t) + future_topplings - 1;
+end
+\end{lstlisting}
+For each toppling, the number of further topplings is counted, summed up and subtracted by one. Then, the avalanche lifetime is calculated according to the formula $\sum _t = s - a$ as follows:
+\begin{lstlisting}
+% return avalanche lifetimes
+at = avalanche_sizes - avalanche_add;
+\end{lstlisting}
+
+
