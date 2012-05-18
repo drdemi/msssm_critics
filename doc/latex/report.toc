@@ -2,21 +2,23 @@
 \contentsline {chapter}{Abstract}{i}{section*.1}
 \contentsline {chapter}{Acknowledgements}{iii}{section*.3}
 \contentsline {chapter}{\numberline {1}Introduction and Motivations}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}The Sandpile Model}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Bak-Tang-Wiesenfeld Model}{2}{section.2.1}
-\contentsline {section}{\numberline {2.2}Parameters}{3}{section.2.2}
-\contentsline {section}{\numberline {2.3}Abelian Model}{3}{section.2.3}
-\contentsline {chapter}{\numberline {3}Model Implementation in MATLAB/Octave}{6}{chapter.3}
-\contentsline {subsubsection}{Note on Code and Programming Sustainability}{6}{section*.8}
-\contentsline {section}{\numberline {3.1}Basic Sandpile Code}{6}{section.3.1}
-\contentsline {section}{\numberline {3.2}Simple Avalanche Code}{7}{section.3.2}
-\contentsline {section}{\numberline {3.3}Optimization of Avalanche Code}{7}{section.3.3}
-\contentsline {section}{\numberline {3.4}Statistics}{9}{section.3.4}
-\contentsline {chapter}{\numberline {4}Simulation Results}{11}{chapter.4}
-\contentsline {chapter}{\numberline {5}Summary and Outlook}{12}{chapter.5}
-\contentsline {chapter}{References}{13}{section*.11}
-\contentsline {chapter}{\numberline {A}MATLAB/Octave-Code}{15}{appendix.A}
-\contentsline {section}{\numberline {A.1}critical field}{15}{section.A.1}
-\contentsline {section}{\numberline {A.2}sandpile}{15}{section.A.2}
-\contentsline {section}{\numberline {A.3}avalanche distribution analysis}{18}{section.A.3}
-\contentsline {section}{\numberline {A.4}test sandpile}{19}{section.A.4}
+\contentsline {section}{\numberline {1.1}Cellular Automation}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Self-Organized Criticality}{1}{section.1.2}
+\contentsline {chapter}{\numberline {2}The Sandpile Model}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Bak-Tang-Wiesenfeld Model}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Parameters}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Abelian Model}{5}{section.2.3}
+\contentsline {chapter}{\numberline {3}Model Implementation in MATLAB/Octave}{7}{chapter.3}
+\contentsline {subsubsection}{Note on Code and Programming Sustainability}{7}{section*.8}
+\contentsline {section}{\numberline {3.1}Basic Sandpile Code}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Simple Avalanche Code}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Optimization of Avalanche Code}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Statistics}{10}{section.3.4}
+\contentsline {chapter}{\numberline {4}Simulation Results}{12}{chapter.4}
+\contentsline {chapter}{\numberline {5}Summary and Outlook}{13}{chapter.5}
+\contentsline {chapter}{References}{14}{section*.11}
+\contentsline {chapter}{\numberline {A}MATLAB/Octave-Code}{17}{appendix.A}
+\contentsline {section}{\numberline {A.1}critical field}{17}{section.A.1}
+\contentsline {section}{\numberline {A.2}sandpile}{17}{section.A.2}
+\contentsline {section}{\numberline {A.3}avalanche distribution analysis}{20}{section.A.3}
+\contentsline {section}{\numberline {A.4}test sandpile}{22}{section.A.4}

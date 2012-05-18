@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% sandpile simulation
+% sandpile simulation environment
 %
 %
 
@@ -12,6 +12,6 @@ f = critical_field(20,20,3,true);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% to do: continuous grain placing (0...1) à la grain size
-%
-%        h parameter
+% not yet implemented: 
+%	- continuous grain placing with grain size (0...1)
+%	- h parameter

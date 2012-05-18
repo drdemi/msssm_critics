@@ -1,4 +1,5 @@
-function [a,b,a2,b2] = avalanche_distribution_analysis(avalanche_sizes,avalanche_lifetimes)
+function [a,b,a2,b2] = avalanche_distribution_analysis( ...
+	avalanche_sizes,avalanche_lifetimes)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % analysis avalanche distribution and fits it to a power-law
@@ -48,7 +49,8 @@ function [a,b,a2,b2] = avalanche_distribution_analysis(avalanche_sizes,avalanche
 	plot(xx,c(1).*xx.^c(2),'r');
 	xlabel('avalanche size s');
 	ylabel('avalanche count P(s)');
-	title(['avalanche distribution and power-law-fit P(s)='	num2str(c(1)) '*s^ ' num2str(c(2))]);
+	title(['avalanche distribution and power-law-fit P(s)='	...
+		num2str(c(1)) '*s^ ' num2str(c(2))]);
 
 	% same on a log-log-scale plot
 	subplot(2,2,2);
@@ -57,7 +59,8 @@ function [a,b,a2,b2] = avalanche_distribution_analysis(avalanche_sizes,avalanche
 	loglog(xx,c(1).*xx.^c(2),'r');
 	xlabel('avalanche size s');
 	ylabel('avalanche count P(s)');
-	title(['avalanche distribution and power-law-fit P(s)='	num2str(c(1)) '*s^ ' num2str(c(2))]);
+	title(['avalanche distribution and power-law-fit P(s)='	...
+		num2str(c(1)) '*s^ ' num2str(c(2))]);
 
 	% return coefficients
 	a = c(1);
@@ -73,7 +76,8 @@ function [a,b,a2,b2] = avalanche_distribution_analysis(avalanche_sizes,avalanche
 	plot(xx2,c(1).*xx2.^c(2),'r');
 	xlabel('avalanche lifetime t');
 	ylabel('avalanche count P(t)');
-	title(['avalanche distribution and power-law-fit P(t)='	num2str(c(1)) '*t^ ' num2str(c(2))]);
+	title(['avalanche distribution and power-law-fit P(t)='	...
+		num2str(c(1)) '*t^ ' num2str(c(2))]);
 
 	% same on a log-log-scale plot
 	subplot(2,2,4);
@@ -82,7 +86,8 @@ function [a,b,a2,b2] = avalanche_distribution_analysis(avalanche_sizes,avalanche
 	loglog(xx2,c(1).*xx2.^c(2),'r');
 	xlabel('avalanche lifetime t');
 	ylabel('avalanche count P(s)');
-	title(['avalanche distribution and power-law-fit P(t)='	num2str(c(1)) '*t^ ' num2str(c(2))]);
+	title(['avalanche distribution and power-law-fit P(t)='	...
+		num2str(c(1)) '*t^ ' num2str(c(2))]);
 
 	% return coefficients
 	a2 = c(1);
