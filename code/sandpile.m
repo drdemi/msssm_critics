@@ -18,7 +18,8 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 %	boundary_type 		 type of boundary condition
 %					 1 - infinite/continuous, like pac-man
 %					 2 - energy loss at boundaries, table-like
-%					 3 - ...
+%					 3 - mixed. continuous in x-direction and 
+%						energy loss in y-direction
 %	make_pictures 		 draw and export all frames or not
 %	silent 			 produces no output (except time progress) if true
 %	driving_plane_reduction	 percentage of field close to the boundary
@@ -202,6 +203,65 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 								% count future topplings to be caused by this toppling
 								if (f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) == (critical_state+1))
 									future_topplings = future_topplings + 1;
+								end
+							end
+						% 3) mixed (1 for x and 2 for y)
+						elseif (boundary == 3)
+
+							% for x-direction -> continuous boundary
+							if (neighbour_offset_y(n)==0)
+
+								% modify neighbour offsets
+								if (y+neighbour_offset_y(n) < 1)
+									neighbour_offset_y(n) = neighbour_offset_y(n) + height;
+								end
+								if (y+neighbour_offset_y(n) > height)
+									neighbour_offset_y(n) = neighbour_offset_y(n) - height;
+								end
+								if (x+neighbour_offset_x(n) < 1)
+									neighbour_offset_x(n) = neighbour_offset_x(n) + width;
+								end
+								if (x+neighbour_offset_x(n) > width)
+									neighbour_offset_x(n) = neighbour_offset_x(n) - width;
+								end
+
+								% add/transport grain to neighbour
+								f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = ...
+									f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
+
+								% push neighbour to stack
+								stack_n = stack_n + 1;
+								stack_x(stack_n) = x + neighbour_offset_x(n);
+								stack_y(stack_n) = y + neighbour_offset_y(n);
+
+								% count future topplings to be caused by this toppling
+								if (f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) == (critical_state+1))
+									future_topplings = future_topplings + 1;
+								end
+
+							% for y-direction -> open boundary
+							else
+
+								% keep offsets, but check if outside of boundary
+								if ((y+neighbour_offset_y(n) < 1) || ...
+								   (y+neighbour_offset_y(n) > height) || ...
+								   (x+neighbour_offset_x(n) < 1) || ...
+								   (x+neighbour_offset_x(n) > width))
+									% outside of boundary...do nothing =)
+								else
+									% add/transport grain to neighbour
+									f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) = ...
+										f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) + collapse;
+
+									% push neighbour's neighbours to stack
+									stack_n = stack_n + 1;
+									stack_x(stack_n) = x + neighbour_offset_x(n);
+									stack_y(stack_n) = y + neighbour_offset_y(n);
+
+									% count future topplings to be caused by this toppling
+									if (f(y+neighbour_offset_y(n),x+neighbour_offset_x(n)) == (critical_state+1))
+										future_topplings = future_topplings + 1;
+									end
 								end
 							end
 						end
