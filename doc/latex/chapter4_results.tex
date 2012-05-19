@@ -1,3 +1,13 @@
-\chapter{Simulation Results}
+\chapter{Simulation Results and Discussion}
 \thispagestyle{fancy}
 
+\section{Fractals}
+As discussed in section \ref{sec:CAandSOC}, in order to show that a dynamical system exhibits SOC, some fractal nature must be present. As done analytically for a 1-D-model in \cite{fractal_avalanching}, we can plot the energy of a system over time according to the definition of normalized energy
+\[
+E(t) = \int_f h(x,y,t)^2 df
+\]
+where $h$ is the height of a site at position $(x,y)$ of the field $f$ at time $t$. In MATLAB/Octave, at the end of every main loop iteration the energy is calculated:
+\begin{lstlisting}
+ee(t) = sum(sum(f.^2));
+\end{lstlisting}
+As the energy series in 1-dimensional case shows fractal properties (see \cite{fractal_avalanching}), the question arises if this is true for a 2-dimensional case.

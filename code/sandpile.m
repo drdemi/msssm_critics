@@ -1,6 +1,6 @@
-function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
+function [as,nc,at,final,energy] = sandpile(f, neighbour, critical_state, ...
 	collapse_per_neighbour, timesteps, boundary_type, make_pictures, ...
-	silent, driving_plane_reduction, var_grain) 
+	silent, driving_plane_reduction, var_grain, same_place) 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % sandpile simulation using stack algorithm for avalanche generation
@@ -21,6 +21,8 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 %					 3 - mixed. continuous in x-direction and 
 %						energy loss in y-direction
 %	make_pictures 		 draw and export all frames or not
+%				 >0 means save a pic for each t,
+%				 >1 means avalanches too
 %	silent 			 produces no output (except time progress) if true
 %	driving_plane_reduction	 percentage of field close to the boundary
 %				 not to be affected by driving (putting grains)
@@ -35,6 +37,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 %	nc			size at avalanche-starting-site for eacg t
 %	at			avalanche lifetime for each t
 %	final			final field
+%	energy			array of energy states for each timestep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -62,6 +65,9 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 	av_begin_t = zeros(1,timesteps);
 	avalanche_add = zeros(1,timesteps);	% = av_size - av_ltime
 
+	% energy
+	ee = zeros(1,timesteps);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	% show starting field
@@ -75,21 +81,26 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 		disp(['time: ' num2str(t) ' / ' num2str(timesteps)]);
 
 		% choose random site
-		y=floor(unifrnd(1,height*(1-2*driving_plane_reduction)) + ...
-			height*driving_plane_reduction);
-		x=floor(unifrnd(1,width*(1-2*driving_plane_reduction)) + ...
-			width*driving_plane_reduction);	% uniform distribution rnd
+		if (same_place)
+			x=floor(width/2);
+			y=floor(height/2);
+		else
+			y=floor(unifrnd(1,height*(1-2*driving_plane_reduction)) + ...
+				height*driving_plane_reduction);
+			x=floor(unifrnd(1,width*(1-2*driving_plane_reduction)) + ...
+				width*driving_plane_reduction);	% uniform distribution rnd
+		end
 
 		% place grain
 		f(y,x) = f(y,x) + 1;
 
 		% communicate
 		if (silent==false) 
-			disp(['random grain on x' num2str(x) ',y' num2str(y)]);
+			disp(['new grain on x' num2str(x) ',y' num2str(y)]);
 		end
 
 		% save picture of field before collapsing (incl. active field)
-		if (make_pictures)
+		if (make_pictures>0)
 			draw_field(f,2);
 			title(['random grain on x' num2str(x) ',y' num2str(y)]);
 			picture_counter=picture_counter+1;
@@ -287,7 +298,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 				end
 
 				% save picture of avalanche timestep
-				if (make_pictures)
+				if (make_pictures>1)
 					draw_field(f,2);
 					title(['avalanche...']);
 					picture_counter=picture_counter+1;
@@ -301,6 +312,14 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 			disp(f);
 			disp('');
 		end
+
+		% calculate energy
+%		for fx=1:width
+%			for fy=1:height
+%				ee(t)=ee(t)+f(fy,fx)^2;
+%			end
+%		end
+		ee(t) = sum(sum(f.^2));
 	end
 
 	% return avalanche sizes
@@ -314,4 +333,7 @@ function [as,nc,at,final] = sandpile(f, neighbour, critical_state, ...
 
 	% return avalanche lifetimes
 	at = avalanche_sizes - avalanche_add;
+
+	% return energy
+	energy = ee;
 end

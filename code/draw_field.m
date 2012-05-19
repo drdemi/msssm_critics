@@ -28,10 +28,12 @@ function f = draw_field(a,b)
 		% output using circle plot
 
 		% define colors
-		clr = ['k' 'r' 'g' 'b' 'y' 'y' 'y'];
+		clr = ['k' 'b' 'g' 'y' 'r' 'r' 'r'];
 
-		disp('ok');
-		figure;
+%		figure;
+		clf;
+		xlim([1 size(a,2)]);
+		ylim([1 size(a,1)]);
 		hold on;
 		h=size(a,1);
 		for i=1:size(a,1)

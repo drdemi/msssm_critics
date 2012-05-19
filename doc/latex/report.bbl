@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{sandpile_models}
 Alessandro~Vespignani Alain~Barrat and Stefano Zapperi.
@@ -24,10 +24,20 @@ Deepak Dhar.
 Monwhea Jeng.
 \newblock The abelian sandpile model.
 
+\bibitem{fractal_avalanching}
+R.~O. Dendy G.~Rowlands P.~Helander, S. C.~Chapman and N.~W. Watkins.
+\newblock Exactly solvable sandpile with fractal avalanching.
+\newblock October 1998.
+
 \bibitem{soc}
 Kurt~Wiesenfeld Per~Bak, Chao~Tang.
 \newblock Self-organized criticality.
 \newblock August 1987.
+
+\bibitem{1overf}
+Kurt~Wiesenfeld Per~Bak, Chao~Tang.
+\newblock Self-organized criticality: An explanation of 1/f noise.
+\newblock July 1987.
 
 \bibitem{sandpile_math}
 Frank~Redig Ronald~Meester and Dmitri Znamenski.

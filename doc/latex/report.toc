@@ -15,11 +15,12 @@
 \contentsline {section}{\numberline {3.2}Simple Avalanche Code}{8}{section.3.2}
 \contentsline {section}{\numberline {3.3}Optimization of Avalanche Code}{8}{section.3.3}
 \contentsline {section}{\numberline {3.4}Statistics}{10}{section.3.4}
-\contentsline {chapter}{\numberline {4}Simulation Results}{12}{chapter.4}
+\contentsline {chapter}{\numberline {4}Simulation Results and Discussion}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Fractals}{12}{section.4.1}
 \contentsline {chapter}{\numberline {5}Summary and Outlook}{13}{chapter.5}
 \contentsline {chapter}{References}{14}{section*.11}
 \contentsline {chapter}{\numberline {A}MATLAB/Octave-Code}{17}{appendix.A}
 \contentsline {section}{\numberline {A.1}critical field}{17}{section.A.1}
 \contentsline {section}{\numberline {A.2}sandpile}{17}{section.A.2}
-\contentsline {section}{\numberline {A.3}avalanche distribution analysis}{20}{section.A.3}
-\contentsline {section}{\numberline {A.4}test sandpile}{22}{section.A.4}
+\contentsline {section}{\numberline {A.3}avalanche distribution analysis}{21}{section.A.3}
+\contentsline {section}{\numberline {A.4}test sandpile}{23}{section.A.4}
