@@ -134,10 +134,7 @@ This latter case is showed first the restricted axis for a good comparison and t
 
 
 
-
-\subsection{Finite boundary conditions}
-
-For the finite boundaries, we have a automatic mechanism to drop the added grains during the driving time, however, unlike the previous case, we have to deal with finite size effects. 
+For the finite boundaries, we have an automatic mechanism to drop the added grains during the driving time, however, unlike the previous case, we have to deal with finite size effects. 
 
 A perturbation in the boundary might give a different avalanche distribution than a perturbation placed in the bulk,
 as one might expect that bulk perturbation to produce bigger avalanches, 
@@ -160,33 +157,47 @@ and right one shows the result caused by perturbations in a bulk site, $(25,25)$
 
 
 The relation of the number of sites in the volume respect to the number of sites at boundary should be proportional to $n$, as it is basically the ration of volume and area.
-Thi implies that for large lattices, one encounters much more very large avalanche respect to a smaller lattice. For a randomized grain addition, we see similar behaviour as the bulk case.
+This implies that for large lattices, one encounters much more large avalanche respect to a smaller lattice. See the plot in the figure~\ref{sn}.
 
-If we add friction and go to the real case, the number of huge avalanche reduces. Again, we see the importance of friction to modelate the distribution to more a power-law like one.
+\begin{figure} 
+\begin{center}
+\includegraphics[width=0.49\textwidth]{results/2sn50.png}
+\includegraphics[width=0.49\textwidth]{results/2sn100.png} 
+\caption{Avalanche size distribution for $2d$ lattices with different sizes and open boundary conditions.}
+\label{sn}
+\end{center}
+\end{figure} 
 
+If we add friction and go to the real case, the number of huge avalanche reduces. 
+Again, we see the importance of friction to modelate the distribution to a more power-law like one, but also with cut-off effect discussed before. 
+\begin{figure} 
+\begin{center}
+\includegraphics[width=0.49\textwidth]{results/2sof.png}
+\includegraphics[width=0.49\textwidth]{results/2eof.png}
+\caption{Avalanche size distribution and energy evolution for $2d$ lattices with friction and open boundary conditions.}
+\label{so}
+\end{center}
+\end{figure} 
 
 
 \subsection{Slowly driven test}
-A part from friction, we can also study what happens if we additionally add grain during the avalanche process, let's call this parameter $h$.
-We see that the system indeed goes less power-law like.
+A part from friction, we can also study what happens if we additionally add grains during the avalanche process, let's call this parameter $h$.
+We see that the system indeed goes less power-law like, with much more large avalanches, as during one avalanche time, 
+other avalanche can happen and the program cannot distinguish them. See result in figure~\ref{soh}, for the case when we always add a critical state during avalanche time.
 
-In mean field theory, one can consider this $h$ parameter as a fine tuning parameter, as when $h\longrightarrow0$, the systems turns to have a better statistics.
+In mean field theory, one can consider this $h$ parameter as a fine tuning parameter, as when $h\longrightarrow0$, the systems turns to have better statistics.
 
-However, from our studies, we are less precise and think that the criticality is achieved by an interplay of grain addition and dissipation, with dissipation in average. 
+\begin{figure} 
+\begin{center}
+\includegraphics[width=0.49\textwidth]{results/2soh.png}
+\caption{Avalanche size distribution for $2d$ lattices with open boundary conditions and $h=1$. }
+\label{soh}
+\end{center}
+\end{figure} 
 
- 
-\section{Conclusion}
+From our analysis, we see that it is important that dissipation exists during the avalanche time, rather losing energy in the boundary 
+or by energy dissipation during the propagation. 
 
-SOC is still a vague phenomenology, that many attempts to use it to explain the many power-like distribution in real systems using computational models.
-
-From the studies of different cases of the abelian sandpile, we conclude that the continuous case, with real field and friction in propagating the grains, 
-the system bears nice power-law like distribution for avalanche size, and a bit worse fit for avalanche lifetime. 
-This case, independent of the boundary conditions, is also the more realistic one, therefore, one might identify it with SOC. 
-
-In summary, we associate \textbf{slowly driven} systems with \textbf{dissipation} and a \texbg{local threshold} that leads to avalanche phenomena, to SOC, 
-and our computational models bear these characteristics. 
-Distinct specific laws might change only the critical exponent. 
-
-The cellulla automation models of sandpile is then, a convenient way to modelize real systems with the discussed properties.
-
-A deeper understanding of SOC, if it exists, definitely needs a mathematical framework. 
+During the driving time, the energy of the system, namely the sum of the values of the field of all sites,
+tends to oscillate around a constant value, as the additional grain in each driving time is compensated with the dissipation during avalanche, 
+see for example figures~\ref{so} and \ref{ep}.
