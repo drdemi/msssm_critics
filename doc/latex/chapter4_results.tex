@@ -19,6 +19,13 @@ according to different boundary conditions, namely the periodic boundary conditi
 
 
 
+\section{Power-law distributions}
+
+In this section, we investigate tha avalanche size and lifetime distribution, 
+according to different boundary conditions, namely the periodic boundary conditions and open boundary conditions.
+
+
+
 \subsection{Periodic boundary conditions}
 
 For periodic boundary conditions, there is never grain lost if we do not introduce friction. 
@@ -29,21 +36,6 @@ though in theory, the lattice is infinite large which would imply the size shoul
 
 We studied a $100\times 100$ lattice with a driving time $T=5000$, and the results are presented in the figure~\ref{sp}, 
 where we see quite a nice power-law behaviour for avalanche size, but a worse one for the lifetime. 
-
-Due to memory-demanding large lattices and large driving time, we will not treat higher dimensions.
-The periodic boundary case without grain lost, though, is not of much interest, as real systems are finite and dissipative, hence, we might not include it as a SOC phenomenon. 
-
-Instead, we should introduce a friction parameter, and hence, consider a \emph{real} $E$ field, instead of discrete grain addition. 
-Figure~\ref{3sp} shows some results, and we see a nice power-law like behaviour for $d\geq2$. The lifetime, again, shows worse statistics.  
-
-We see that the critical exponent changes with different value of friction, as it is expected, hence clearly, the dissipation plays an important role.
-
-Since the periodic boundary in theory represents infinite large lattice, thus, independent of the size, this represents a computational advantage, 
-and we will use periodic boundary sandpile with dissipation to study higher dimensions.
-We see that the dimension also affects the critical exponent and that there is no criticality for 1 dimensional case, which agrees with the theory.
-
-
-
 
 
 \begin{figure} 
@@ -56,15 +48,88 @@ The driving time is $T=5000$.  }
 \end{center}
 \end{figure} 
 
-% \begin{figure} 
-% \begin{center}
-% \includegraphics[width=0.49\textwidth]{results/3sp.png}
-% \includegraphics[width=0.49\textwidth]{results/3tp.png} 
-% \caption{Avalanche size and lifetime distribution for $3d$ lattice with friction, with periodic boundary conditions. 
-% The driving time is $T=5000$.  }
-% \label{3sp}
-% \end{center}
-% \end{figure} 
+Due to memory-demanding large lattices and large driving time, we will not treat higher dimensions.
+The periodic boundary case without grain lost, though, is not of much interest, as real systems are finite and dissipative, 
+hence, we might not include it as a SOC phenomenon. 
+
+Instead, we should introduce a friction parameter, and hence, consider a \emph{real} $E$ field, in contrast to a discrete integer field. 
+The periodic boundary in principle implies lattice size independence, which will represent a computational advantage, as we can choose small lattice.
+Indeed, this is true, however, the driving time whould increase with size in order to get enough statistics. 
+
+We studied this situation for $d=2$, with $n=10$, $n=50$ and $n=100$. See figure~\ref{spf} for the results. 
+We see a clear cut-off for large avalanche number due to friction, though the we have a quite nice power-law distribution for small avalanches.
+The lifetime is not shown, as it shows worse statistics, which do not differ too much from the case in figure~\ref{sp}.
+
+Besides, we can be more or less secure to use small lattices with also smaller total driving time, therefore, 
+this criteria will be used to explore higher dimensional lattices.
+Figure~\ref{dsp} shows some plots. The cut-off effect due to friction is much less than the $2d$ lattice, 
+but we can increase it and check again the effect of friction (see figure~\ref{3spf}).
+From this analysis, clearly, the dissipation plays an important role, nevertheless, on \emph{average}, 
+the total energy of lattice is kept constant when the system evolves, see figure~\ref{ep}. 
+
+Furthermore, for $d=1$, we clearly do not see critical behaviour, in agreement with the prediction of theory (the situation for open boundary is also checked to be the same). Figure~\ref{1p}. 
+
+\begin{figure} 
+\begin{center}
+\includegraphics[width=0.49\textwidth]{results/spf.png}
+\includegraphics[width=0.49\textwidth]{results/spf50.png} \\
+\includegraphics[width=0.49\textwidth]{results/spf100.png} 
+\includegraphics[width=0.49\textwidth]{results/spf100a.png}
+\caption{Avalanche size distribution for $2d$ lattice with friction, with periodic boundary conditions. 
+The driving time is $T=10000$ for $n=10$ and $n=50$, and $T=100000$ for $n=100$. 
+This latter case is showed first the restricted axis for a good comparison and the complete statistics, from which we see a clear cut-off due to friction.  }
+\label{spf}
+\end{center}
+\end{figure} 
+
+
+
+\begin{figure} 
+\begin{center}
+\includegraphics[width=0.49\textwidth]{results/3spf.png}
+\includegraphics[width=0.49\textwidth]{results/3tpf.png} \\
+\includegraphics[width=0.49\textwidth]{results/4spf.png}
+\includegraphics[width=0.49\textwidth]{results/4tpf.png} 
+\caption{Avalanche size and lifetime distribution for $3d$ and $4d$ lattices with friction and periodic boundary conditions. }
+\label{dspf}
+\end{center}
+\end{figure}  
+
+
+\begin{figure} 
+\begin{center}
+\includegraphics[width=0.49\textwidth]{results/3spf08.png}
+\includegraphics[width=0.49\textwidth]{results/3spf07.png} 
+\caption{Avalanche size distribution for $3d$ lattice with different friction parameter and periodic boundary conditions. }
+\label{3spf}
+\end{center}
+\end{figure}  
+
+\begin{figure} 
+\begin{center}
+\includegraphics[width=0.49\textwidth]{results/3ep.png}
+\includegraphics[width=0.49\textwidth]{results/4ep.png} 
+\caption{Normalized total energy evolution for $3d$ and $4d$ lattices with friction and periodic boundary conditions. }
+\label{ep}
+\end{center}
+\end{figure}  
+
+
+
+
+\begin{figure} 
+\begin{center}
+\includegraphics[width=0.49\textwidth]{results/1sp.png}
+\includegraphics[width=0.49\textwidth]{results/1tp.png} 
+\caption{Avalanche size and lifetime distribution for $1d$ lattices with friction and periodic boundary conditions and $T=10^5$. There is no criticality for this case. }
+\label{1p}
+\end{center}
+\end{figure} 
+
+
+
+
+
 
 
 
@@ -98,6 +163,8 @@ The relation of the number of sites in the volume respect to the number of sites
 Thi implies that for large lattices, one encounters much more very large avalanche respect to a smaller lattice. For a randomized grain addition, we see similar behaviour as the bulk case.
 
 If we add friction and go to the real case, the number of huge avalanche reduces. Again, we see the importance of friction to modelate the distribution to more a power-law like one.
+
+
 
 \subsection{Slowly driven test}
 A part from friction, we can also study what happens if we additionally add grain during the avalanche process, let's call this parameter $h$.
