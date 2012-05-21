@@ -2,7 +2,7 @@
 \thispagestyle{fancy}
 
 \subsubsection{Note on Code and Programming Sustainability}
-In order to produce  ``sustainable'' code and to share the spirit of independency coming from the open-source community, the coded routines were tested in MATLAB and in Octave (one of its open-source clones). The source code can be found in Appendix \ref{chp:matlab}.
+In order to produce  ``sustainable'' code and to share the spirit of independency coming from the open-source community, the coded routines were tested in MATLAB and in Octave (one of its open-source clones). The source code can be found in Appendix~\ref{chp:matlab}.
 
 \section{Basic Sandpile Code}
 First, a lattice/field is generated using uniformly distributed random numbers from 0 to $z_c$ (\mcode{critical_state}). This is done in order to start with a potentially critical field and not to place single grains of sand until a site gets critical.
@@ -36,7 +36,7 @@ end
 ...ASDF...
 
 \section{Optimization of Avalanche Code}
-The simple avalanche code checks the whole field including the fields, that cannot possibly be affected by the avalanche. It can therefore be optimized, for example using a LIFO data structure -- a \emph{stack}. The coordinates of very site that needs to be checked are placed on the stack, so that the computation of the avalanche consists of working through the stack and toppling all the active sites in it. During their toppling, their neighbours are again put on the stack, which makes the procedure dynamical and not easily comprehensive. The algorithm is illustrated in figure \ref{pics:stack2}.
+The simple avalanche code checks the whole field including the fields, that cannot possibly be affected by the avalanche. It can therefore be optimized, for example using a LIFO data structure -- a \emph{stack}. The coordinates of very site that needs to be checked are placed on the stack, so that the computation of the avalanche consists of working through the stack and toppling all the active sites in it. During their toppling, their neighbours are again put on the stack, which makes the procedure dynamical and not easily comprehensive. The algorithm is illustrated in figure~\ref{pics:stack2}.
 
 \begin{figure}[!htpb]
 \centering
@@ -45,7 +45,7 @@ The simple avalanche code checks the whole field including the fields, that cann
 \label{pics:stack2}
 \end{figure}
 
-Considering the example from figure \ref{pics:abelian}, the stack algorithm results in the following sequence:
+Considering the example from figure~\ref{pics:abelian}, the stack algorithm results in the following sequence:
 \begin{enumerate}
  \setcounter{enumi}{-1}
  \item push C3
@@ -56,7 +56,7 @@ Considering the example from figure \ref{pics:abelian}, the stack algorithm resu
  \item pop B4, \ldots
  \item pop C4, \ldots
 \end{enumerate}
-Figure \ref{pics:stack1} shows the states of the stack after each of these steps. To avoid confusion, only the active sites are shown here.
+Figure~\ref{pics:stack1} shows the states of the stack after each of these steps. To avoid confusion, only the active sites are shown here.
 
 \begin{figure}[!htpb]
 \centering

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.20)  19 MAY 2012 12:08
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.20)  21 MAY 2012 18:06
 entering extended mode
  %&-line parsing enabled.
 **report
@@ -679,7 +679,7 @@ LaTeX Info: Redefining \pageref on input line 98.
 \openout4 = `report.out'.
 
 \AtBeginShipoutBox=\box41
- (./cover.tex <ETHlogo.png, id=103, 179.7114pt x 45.2892pt>
+ (./cover.tex <ETHlogo.png, id=127, 179.7114pt x 45.2892pt>
 File: ETHlogo.png Graphic file (type png)
 
 <use ETHlogo.png>
@@ -687,7 +687,7 @@ Overfull \hbox (38.09772pt too wide) in paragraph at lines 34--42
  [][] 
  []
 
-<addon_bucket_and_spade.png, id=104, 803.0pt x 676.5275pt>
+<addon_bucket_and_spade.png, id=128, 803.0pt x 676.5275pt>
 File: addon_bucket_and_spade.png Graphic file (type png)
 
 <use addon_bucket_and_spade.png>) [1
@@ -725,11 +725,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] [4
 
-] (./report.toc)
-\tf@toc=\write5
-\openout5 = `report.toc'.
-
-
+] (./report.toc
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -739,9 +735,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [5
 
 
-] [6
-
 ])
+\tf@toc=\write5
+\openout5 = `report.toc'.
+
+ [6])
 \openout2 = `chapter1_intro.aux'.
 
  (./chapter1_intro.tex
@@ -756,8 +754,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.23 \end{itemize}
-                   [1
+l.10 
+      [1
+
 
 
 
@@ -774,6 +773,13 @@ been already used, duplicate ignored
                    \relax 
 l.146 \include{chapter1_intro}
                                [2]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3]
 \openout2 = `chapter2_model.aux'.
 
  (./chapter2_model.tex
@@ -784,7 +790,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3
+[4
 
 
 
@@ -792,7 +798,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 pdfTeX warning: pdflatex (file ./pics/pic4_boundary.pdf): PDF inclusion: found 
 PDF version <1.5>, but at most version <1.4> allowed
-<pics/pic4_boundary.pdf, id=193, 958.07355pt x 769.94345pt>
+<pics/pic4_boundary.pdf, id=227, 958.07355pt x 769.94345pt>
 File: pics/pic4_boundary.pdf Graphic file (type pdf)
 
 <use pics/pic4_boundary.pdf>
@@ -802,11 +808,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
+[5]
 
 pdfTeX warning: pdflatex (file ./pics/pic1_abelian.pdf): PDF inclusion: found P
 DF version <1.5>, but at most version <1.4> allowed
-<pics/pic1_abelian.pdf, id=202, 2645.63406pt x 3004.58669pt>
+<pics/pic1_abelian.pdf, id=237, 2645.63406pt x 3004.58669pt>
 File: pics/pic1_abelian.pdf Graphic file (type pdf)
 
 <use pics/pic1_abelian.pdf>)
@@ -816,14 +822,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <./pics/pic4_boundary.pdf>]
+[6 <./pics/pic4_boundary.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6 <./pics/pic1_abelian.pdf>]
+[7 <./pics/pic1_abelian.pdf>]
 \openout2 = `chapter3_implementation.aux'.
 
  (./chapter3_implementation.tex
@@ -851,7 +857,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7
+[8
 
 
 
@@ -859,7 +865,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 pdfTeX warning: pdflatex (file ./pics/pic3_stack2.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<pics/pic3_stack2.pdf, id=256, 888.2184pt x 984.08223pt>
+<pics/pic3_stack2.pdf, id=290, 888.2184pt x 984.08223pt>
 File: pics/pic3_stack2.pdf Graphic file (type pdf)
 
 <use pics/pic3_stack2.pdf>
@@ -869,11 +875,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <./pics/pic3_stack2.pdf>]
+[9 <./pics/pic3_stack2.pdf>]
 
 pdfTeX warning: pdflatex (file ./pics/pic2_stack1.pdf): PDF inclusion: found PD
 F version <1.5>, but at most version <1.4> allowed
-<pics/pic2_stack1.pdf, id=279, 504.41966pt x 479.1851pt>
+<pics/pic2_stack1.pdf, id=313, 504.41966pt x 479.1851pt>
 File: pics/pic2_stack1.pdf Graphic file (type pdf)
 
 <use pics/pic2_stack1.pdf>
@@ -883,14 +889,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9 <./pics/pic2_stack1.pdf>]
+[10 <./pics/pic2_stack1.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10]
+[11]
 Overfull \hbox (19.20386pt too wide) in paragraph at lines 175--176
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -902,11 +908,164 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11]
+[12]
 \openout2 = `chapter4_results.aux'.
 
  (./chapter4_results.tex
 Chapter 4.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13
+
+
+
+] <results/sp.png, id=449, 411.136pt x 308.352pt>
+File: results/sp.png Graphic file (type png)
+ <use results/sp.png>
+<results/tp.png, id=450, 411.136pt x 308.352pt>
+File: results/tp.png Graphic file (type png)
+ <use results/tp.png>
+<results/3spf.png, id=454, 411.136pt x 308.352pt>
+File: results/3spf.png Graphic file (type png)
+ <use results/3spf.png>
+<results/3tpf.png, id=455, 411.136pt x 308.352pt>
+File: results/3tpf.png Graphic file (type png)
+ <use results/3tpf.png>
+<results/4spf.png, id=456, 411.136pt x 308.352pt>
+File: results/4spf.png Graphic file (type png)
+ <use results/4spf.png>
+<results/4tpf.png, id=457, 411.136pt x 308.352pt>
+File: results/4tpf.png Graphic file (type png)
+ <use results/4tpf.png>
+<results/3spf08.png, id=458, 411.136pt x 308.352pt>
+File: results/3spf08.png Graphic file (type png)
+ <use results/3spf08.png>
+<results/3spf07.png, id=459, 411.136pt x 308.352pt>
+File: results/3spf07.png Graphic file (type png)
+ <use results/3spf07.png>
+<results/3ep.png, id=460, 411.136pt x 308.352pt>
+File: results/3ep.png Graphic file (type png)
+ <use results/3ep.png>
+<results/4ep.png, id=461, 411.136pt x 308.352pt>
+File: results/4ep.png Graphic file (type png)
+ <use results/4ep.png>
+<results/1sp.png, id=462, 411.136pt x 308.352pt>
+File: results/1sp.png Graphic file (type png)
+ <use results/1sp.png>
+<results/1tp.png, id=463, 411.136pt x 308.352pt>
+File: results/1tp.png Graphic file (type png)
+ <use results/1tp.png>
+<results/spf.png, id=472, 411.136pt x 307.549pt>
+File: results/spf.png Graphic file (type png)
+ <use results/spf.png>
+<results/spf50.png, id=473, 411.136pt x 308.352pt>
+File: results/spf50.png Graphic file (type png)
+ <use results/spf50.png>
+<results/spf100.png, id=474, 411.136pt x 307.549pt>
+File: results/spf100.png Graphic file (type png)
+ <use results/spf100.png>
+<results/spf100a.png, id=475, 411.136pt x 308.352pt>
+File: results/spf100a.png Graphic file (type png)
+ <use results/spf100a.png>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15 <./results/sp.png (PNG copy)> <./results/tp.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16 <./results/3spf.png (PNG copy)> <./results/3tpf.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17 <./results/4spf.png (PNG copy)> <./results/4tpf.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18 <./results/3spf08.png (PNG copy)> <./results/3spf07.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19 <./results/3ep.png (PNG copy)> <./results/4ep.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20 <./results/1sp.png (PNG copy)> <./results/1tp.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21 <./results/spf.png (PNG copy)> <./results/spf50.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22 <./results/spf100.png (PNG copy)> <./results/spf100a.png (PNG copy)>]
+<results/sv1.png, id=525, 543.631pt x 457.71pt>
+File: results/sv1.png Graphic file (type png)
+ <use results/sv1.png>
+<results/sbulk_th.png, id=526, 543.631pt x 457.71pt>
+File: results/sbulk_th.png Graphic file (type png)
+
+<use results/sbulk_th.png> <results/2sn50.png, id=528, 548.449pt x 529.98pt>
+File: results/2sn50.png Graphic file (type png)
+
+<use results/2sn50.png> <results/2sn100.png, id=529, 548.449pt x 529.98pt>
+File: results/2sn100.png Graphic file (type png)
+
+<use results/2sn100.png> <results/2sof.png, id=530, 411.136pt x 307.549pt>
+File: results/2sof.png Graphic file (type png)
+
+<use results/2sof.png> <results/2eof.png, id=531, 548.449pt x 529.98pt>
+File: results/2eof.png Graphic file (type png)
+
+<use results/2eof.png>
+
+LaTeX Warning: File `results/2soh.png' not found on input line 169.
+
+
+! Package pdftex.def Error: File `results/2soh.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 ...s[width=0.75\textwidth]{results/2soh.png}
+                                                  
+? 
 )
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -914,11 +1073,35 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12
+[23]
 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
+[24 <./results/sv1.png (PNG copy)> <./results/sbulk_th.png (PNG copy)>]
 
-]
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25 <./results/2sn50.png (PNG copy)> <./results/2sn100.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26 <./results/2sof.png (PNG copy)> <./results/2eof.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27]
 \openout2 = `chapter5_summary.aux'.
 
  (./chapter5_summary.tex
@@ -930,7 +1113,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13
+[28
 
 
 
@@ -941,7 +1124,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14
+[29
 
 ])
 
@@ -950,9 +1133,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15
-
-] [16
+[30
 
 ]
 \openout2 = `appendix.aux'.
@@ -980,7 +1161,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17
+[31
+
 
 
 
@@ -1005,7 +1187,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[18]
+[32]
 Overfull \hbox (14.40381pt too wide) in paragraph at lines 183--185
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1021,7 +1203,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19]
+[33]
 LaTeX Font Info:    Try loading font information for OMS+pcr on input line 199.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/omspcr.fd
@@ -1065,7 +1247,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20]
+[34]
 Overfull \hbox (9.60376pt too wide) in paragraph at lines 305--306
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][] 
@@ -1087,7 +1269,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21]
+[35]
 Overfull \hbox (14.40381pt too wide) in paragraph at lines 27--28
 [][][][][][][][][][][][][][][][][][][] 
  []
@@ -1099,7 +1281,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22] (../../code/test_sandpile.m
+[36] (../../code/test_sandpile.m
 Overfull \hbox (14.40381pt too wide) in paragraph at lines 1--3
 [][][][][][][][][] 
  []
@@ -1116,20 +1298,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23] [24
+[37] [38
 
 
 ]) (./report.aux (./preamble.aux) (./chapter1_intro.aux)
 (./chapter2_model.aux) (./chapter3_implementation.aux) (./chapter4_results.aux)
 (./chapter5_summary.aux) (./appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 13865 strings out of 495061
- 189780 string characters out of 1182621
- 405281 words of memory out of 3000000
- 16054 multiletter control sequences out of 15000+50000
- 14553 words of font info for 52 fonts, out of 3000000 for 9000
+ 14038 strings out of 495061
+ 192492 string characters out of 1182621
+ 407628 words of memory out of 3000000
+ 16167 multiletter control sequences out of 15000+50000
+ 16447 words of font info for 59 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,12n,75p,707b,1859s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,12n,75p,1109b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc
 /dvips/base/8r.enc} </home/demi/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095
 .600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -1137,16 +1319,18 @@ r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
 mf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/
 fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1
 /public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr1
-7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr
-8a.pfb>
-Output written on report.pdf (32 pages, 467779 bytes).
+onts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on report.pdf (46 pages, 658890 bytes).
 PDF statistics:
- 1147 PDF objects out of 1200 (max. 8388607)
- 686 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1306 PDF objects out of 1440 (max. 8388607)
+ 718 named destinations out of 1000 (max. 500000)
+ 389 words of extra memory for PDF output out of 10000 (max. 10000000)
 

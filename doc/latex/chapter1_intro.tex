@@ -1,8 +1,19 @@
-\chapter{Introduction and Motivations}
+\chapter{Introduction}
 \thispagestyle{fancy}
 
+\section{Motivations}
+In Nature, most of the systems are complex, which means that their behaviour can hardly be predicted, but only partly studied within restrictive approximations. Although ``Complex'' might seem to be a synonim of ``complicated'', one frequently encounters simple power-law distributions or self-similar (fractal) patterns in a vast variety of complex systems, like the intensity of earthquakes distribution (Gutenberg-Richter Law) or our own fractal-like nerveous system, respectively. This suggests the existence some simple but deep underlying laws, and understanding the mechanisms that lead to them is an exciting endeavour of science. In fact, these kinds of behaviour are also characteristic of the so-called \emph{critical phenomena}, studied by the well-established theoretical framework of statistical physics. However, the latter deals with systems in thermodynamic equilibrium, with well-defined thermodynamic variables, such as temperature or pressure. These parameters that can be fine-tuned to obtain a critical state, i.e. a phase transition.
 
-\ldots
+The concept of \emph{Self-Organized Criticality} (SOC) was born as an appealing idea that might connect the real world of nonequilibrium physics (with self-organization) to the powerful tools of equilibrium physics (with criticality). Since its first publication in 1987, it led to many applications across almost every field of science, from astrophysics to economics. However, a comprehensive theoretical framework is still nonexistant. Hence, SOC is still merely a kind of phenomenology, mostly studied within computational simulations.
+ 
+This project does not aim at providing any analytical or theoretical approach to SOC. Instead, its classical paradigm of the sandpile model is studied using cellular automation. Different possibilities are investigated in order to understand better the SOC mechanism and its characteristics. MATLAB/Octave code for n-dimensional abelian sandpile is provided, for either discrete or continuous case, with different boundary conditions and dissipation mechanisms. The results of the discussed code are analyzed, in search of power-law distributions and possible fractal-like manifestations.
+
+\section{Self-Organized Criticality}
+The term self-organized criticality (SOC) basically consists of two properties:
+\begin{itemize}
+\item \emph{self-organization} means that a non-equilibrium system is able to develop structures on its own, without external control or manipulation.
+\item \emph{criticality} implies that a local disturbance not only influences the local neighbourhood, but the whole system. In other words, all the members of a system influence each other. This term originally comes from thermodynamics and describes a state at the phase transition, where a substance (e.g. water) resides between different phases. This concept is presented in~\cite{1overf}.
+\end{itemize}
 
 \section{Cellular Automation}
 A cellular automation (CA) primarily consists of
@@ -15,14 +26,7 @@ A secondary property of a CA is the fact that the evolution rules are local, i.e
 
 Further analysis of the above definitions show that a CA is deterministic, i.e. a given initial configuration will always evolve the same way. \emph{Probabilistic} cellular automata imply an external probability to drive the updating rule and therefore allow to introduce a sort of continuity, even though the automation is of discrete nature.
 
-\section{Self-Organized Criticality}
-The term self-organized criticality (SOC) basically consists of two properties:
-\begin{itemize}
-\item \emph{self-organization} means that a non-equilibrium system is able to develop structures on its own, without external control or manipulation.
-\item \emph{criticality} implies that a local disturbance not only influences the local neighbourhood, but the whole system. In other words, all the members of a system influence each other. This term originally comes from thermodynamics and describes a state at the phase transition, where a substance (e.g. water) resides between different phases. This concept is presented in \cite{1overf}.
-\end{itemize}
-
 \section{CA and SOC}\label{sec:CAandSOC}
-Generally it is difficult to determine whether a certain self-organized system exhibits self-organized criticality. One clue for a SOC-system is the existance of power-law distributions in both spacial and temporal fluctuations. Avalanche sizes (spacial) and lifetimes (temporal), as described later in section \ref{chp3:statistics}, can both show power-law behaviour of the form $f^{-a} \approx f^{-1}$.
+Generally it is difficult to determine whether a certain self-organized system exhibits self-organized criticality. One clue for a SOC-system is the existance of power-law distributions in both spacial and temporal fluctuations. Avalanche sizes (spacial) and lifetimes (temporal), as described later in section~\ref{chp3:statistics}, can both show power-law behaviour of the form $f^{-a} \approx f^{-1}$.
 
 Unfortunately, this type of correlation doesn't necesserily imply that the system is critical, i.e. non-critical systems can also show $f^{-1}$-behaviour. The key idea is that the power-law behaviour is one of the consequences of the \emph{scale-invariance} of the system. The other consequence is the presence of \emph{spacial fractals}, which is harder to identify in a dynamical system than the presence of power-law distributions.
