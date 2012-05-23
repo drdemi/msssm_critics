@@ -189,4 +189,83 @@ For each toppling, the number of further topplings is counted, summed up and sub
 at = avalanche_sizes - avalanche_add;
 \end{lstlisting}
 
+\section{Implementation for $d$-dimension}
+
+The generalization to $d$-dimension is quite straightforward using the linearized index, i.e., ennumerate the sites with one integer number. 
+This is done using the relation:
+\[
+ v=(x_d-1)n^d+(x_{d-1}-1)n^{d-1}+\cdots+(x2-1)*n+x1
+\]
+which is implemented in the function \texttt{linear_index(x,d,n)}, where \texttt{x} is the array with the coordinate of the lattice site. 
+
+
+
+The inverse function is \texttt{coordinate(v,d,n)}, and is written using the Matlab modulus function \texttt{mod()}.
+The idea is simple as well, as we can find a recurrent relation:
+\[
+v=v_d=(x_d-1)n^d+v_{d-1}=(x_d-1)n^d+(x_{d-1}-1)n^{d-1}+v_{d-2}=\cdots=(x_d-1)n^d+(x_{d-1}-1)n^{d-1}+\cdots+(x2-1)*n+v_1
+\]
+hence, 
+\[
+ (x_d-1)=mod((v_d-v_{d-1}),n^d)\cdots x_1=v_1
+\]
+
+The code for this is:
+\begin{lstlisting}
+x=zeros(1,d);    % coordinates (x(1),x(2),..., x(d))
+va=zeros(1,d+1); 
+va(d+1)=v-1;
+  for i=d:-1:1   
+    va(i)=mod(va(i+1),power(n,i-1));
+    x(i)=1+(va(i+1)-va(i))/power(n,i-1);
+  end  
+end
+\end{lstlisting} 
+
+The nearest neighbour function for $d$-dimensional case is implemented in \texttt{neighbour(v,d,n,periodic_boundary)} function,
+which gives the coordinates of the $2d$ nearest neighbour of a given site $v$.  
+We also added the option of periodic boundary (write \texttt{1} in the argument) or finite boundary (\texttt{0}). 
+Basically, the code consists of, first, give the coordinate of any site $v$ using \texttt{coordinate(v,d,n)} function, 
+then, it distinguishes \emph{forward} and \emph{backward} neighbours, by adding or substracting $1$ respectively. 
+In the periodic boundary case, when the coordinate is $0$ or bigger than $n$ (in fact, equal to $n+1$), then, the coordinates are set to
+$n$ or $1$, respectively.  For the finite boundary, we set all the coordinates outside the lattice equal to $-n^d$, 
+since this will always give the corresponding $v<0$, therefore, in the main program, we can easily exclude them using an \texttt{if} condition true for $v>0$. 
+The exact code for this function is attached in the Appendix.
+
+\section{Real field sandpile}
+
+So far we have discussed the sandpile model considering a discrete field, interpreted as height, and adding value $1$ to the field of a random site for each driving time. 
+We can think of this case as a field of grains of uniform size, however, it is straightforward to generalize it to a real field, 
+where we can interpret it as grains with different sizes (or preferably thinking in terms of energy).
+It can be done by adding a real random value between $0$ and $1$, to the field in each driving time. 
+
+
+When the site is overcritical, its nearest neighbours receive a grain of a random size as well, then summing up these numbers, it is what the toppling site loses (conservative case).
+This implies closed boundary for this case, hence it is preferable to introduce some friction if we wish to study the system for a large driving time, just to avoid very large avalanches,
+as there will be a point where all the sites will be overcritical, like the periodic boundary case. 
+The friction parameter means that there is some energy lost in the propagation to the neighbouring sites.
+
+The basic code is rewritten here as:
+\begin{lstlisting}
+for k=1:2*d
+  r(k)=rand(1);                    
+  E(vnn)=E(vnn)+r(k); 
+  c=c+r(k);
+end        
+E(v)=(E(v)-c)*f;
+\end{lstlisting}
+
+
+The whole sandpile program for $d$-dimension is a bit more sophisticated, using also the \emph{stack} method discussed before, 
+but here, there is a stack for each parallel sites dropping caused by one initial toppling site. The advantage is that we can count also the lifetime of the avalanche. 
+The whole program is attached in the Appendix, and more details are commented in there. The discrete field is also implemented there. 
+Some more comments are written in the code itself.
+
+This real field case makes our sandpile model a bit more realistic, though still, the we have finite digits, hence, it is equivalent to the discrete case, only with different propagation rules.
+Besides, the lattice sites are also discrete.
+
+
+
+
+
 
