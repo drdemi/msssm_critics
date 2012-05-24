@@ -207,7 +207,11 @@ v=v_d=(x_d-1)n^d+v_{d-1}=(x_d-1)n^d+(x_{d-1}-1)n^{d-1}+v_{d-2}=\cdots=(x_d-1)n^d
 \]
 hence, 
 \[
- (x_d-1)=mod(v_d-v_{d-1},n^d); \quad  x_1=v_1
+v_d=mod(v_{d-1}, n^d)
+\]
+and 
+\[
+ (x_d-1)=v_d-v_{d-1}/n^d; \quad  x_1=v_1
 \]
 
 The code for this is:
