@@ -9,12 +9,8 @@ First, a lattice/field is generated using uniformly distributed random numbers f
 \begin{lstlisting}
 f = floor(unifrnd(0,critical_state+1,height,width));
 \end{lstlisting}
-Another interesting starting point is a \emph{uniform} critical field, where every site is either 0 or $z_c$.
-\begin{lstlisting}
-f = floor(unifrnd(0,2,height,width))*critical_state;
-\end{lstlisting}
 
-When the field is ready, a global loop runs through a defined number of timesteps, placing a grain on a random site, checking if the site becomes active and if so, computing the resulting avalanche.
+When the field is ready, a global loop runs through a defined number of time steps, placing a grain on a random site, checking if the site becomes active and if so, computing the resulting avalanche.
 \begin{lstlisting}
 for t=1:timesteps
 	% choose random site
@@ -31,9 +27,6 @@ for t=1:timesteps
 	end
 end
 \end{lstlisting}
-
-\section{Simple Avalanche Code}
-...ASDF...
 
 \section{Optimization of Avalanche Code}
 The simple avalanche code checks the whole field including the fields, that cannot possibly be affected by the avalanche. It can therefore be optimized, for example using a LIFO data structure -- a \emph{stack}. The coordinates of very site that needs to be checked are placed on the stack, so that the computation of the avalanche consists of working through the stack and toppling all the active sites in it. During their toppling, their neighbours are again put on the stack, which makes the procedure dynamical and not easily comprehensive. The algorithm is illustrated in figure~\ref{pics:stack2}.
@@ -152,12 +145,12 @@ b = c(2);
 
 \end{lstlisting}
 
-In order to implement statistics of avalanche lifetime in the stack code, the number of additional (i.e. more than one) topplings per timestep must be counted. The reason for this is that the stack algorhithm does not follow a timescale and therefore the number of timesteps taken by an avalanche cannot be counted directly. Therefore, the following equation is used:
+In order to implement statistics of avalanche lifetime in the stack code, the number of additional (i.e. more than one) topplings per time step must be counted. The reason for this is that the stack algorithm does not follow a timescale and therefore the number of time steps taken by an avalanche cannot be counted directly. Therefore, the following equation is used:
 \[
 s = \sum _t n = \underbrace{\sum_t (n - 1)}_{a} + \sum _t
 \qquad \Rightarrow \sum _t = s - a
 \]
-where $s$ is the avalanche size, $t$ is the avalanche lifetime, $n$ is the number of topplings per timestep and $a$ is the total number of additional topplings. The neighbour-checking part of the stack loop looks like this:
+where $s$ is the avalanche size, $t$ is the avalanche lifetime, $n$ is the number of topplings per time step and $a$ is the total number of additional topplings. The neighbour-checking part of the stack loop looks like this:
 \begin{lstlisting}
 % count future topplings to be caused by this toppling
 future_topplings = 0;
@@ -190,3 +183,71 @@ at = avalanche_sizes - avalanche_add;
 \end{lstlisting}
 
 
+\section{The $d$-dimensional case}
+
+The generalization to $d$-dimension is quite straightforward using the linearized index, i.e. enumerating the sites with one integer number. This is done using the relation
+\[
+v=(x_d-1)n^d+(x_{d-1}-1)n^{d-1}+\ldots+(x_2-1)n+x_1
+\]
+which is implemented in the function \mcode{linear_index(x,d,n)}, where \mcode{x} is the array with the coordinate of the lattice site.
+
+
+
+The inverse function is \mcode{coordinate(v,d,n)}, and is written using the Matlab modulus function \mcode{mod()}. The idea is to use a simple recurrent relation as
+\[
+\begin{aligned}
+v & =v_d=(x_d-1)n^d+v_{d-1}=(x_d-1)n^d+(x_{d-1}-1)n^{d-1}+v_{d-2}=\ldots \\
+  & =(x_d-1)n^d+(x_{d-1}-1)n^{d-1}+\ldots+(x_2-1)n+v_1
+\end{aligned}
+\]
+which leads to
+\[
+v_d=mod(v_{d-1}, n^d)
+\]
+and
+\[
+(x_d-1)=v_d-v_{d-1}/n^d; \quad  x_1=v_1.
+\]
+
+The corresponding code is:
+\begin{lstlisting}
+x=zeros(1,d); % coordinates (x(1),x(2),..., x(d))
+va=zeros(1,d+1);
+va(d+1)=v-1;
+  for i=d:-1:1
+    va(i)=mod(va(i+1),power(n,i-1));
+    x(i)=1+(va(i+1)-va(i))/power(n,i-1);
+  end
+end
+\end{lstlisting}
+
+The nearest neighbour function for $d$-dimensional case is implemented in \mcode{neighbour(v,d,n,periodic_boundary)},
+which gives the coordinates of the $2d$ nearest neighbour of a given site $v$.
+The option of periodic boundary (a \mcode{1} in the argument) or finite boundary (\mcode{0}) is included.
+Basically, the code consists of giving the coordinates of any site $v$ using \mcode{coordinate(v,d,n)} function and
+distinguishing \emph{forward} and \emph{backward} neighbours by adding or subtracting $1$ respectively.
+In the periodic boundary case, when the coordinate is $0$ or bigger than $n$ (in fact, equal to $n+1$), the coordinates are set to
+$n$ or $1$, respectively. For the finite boundary, we set all the coordinates outside the lattice equal to $-n^d$,
+since this will always give the corresponding $v<0$. Therefore, in the main program an \mcode{if} condition true for $v>0$ is used for excluding these cases.
+
+\section{Continuous sandpile field}
+
+So far discussed was the sandpile model considering a discrete field, interpreted as height, and adding value of $1$ to a random site for each driving time step. This field can be thought of as a sandpile of uniform grain size. It is straightforward to generalize it to a more realistic field, where the grains can be of different sizes. Preferably, one can speak of the lattice as an energy volume and the grains as energy units. The driving is therefore modified to add a \emph{real} random value between $0$ and $1$ to the field at each driving time step.
+
+When the site is overcritical, its nearest neighbours receive a grain of random size as well. The sum of these numbers is what the toppling site loses, so the mass (or energy) is conserved. This implies closed boundary for this case, hence it is preferable to introduce some friction in order to study the system for a large driving time (as for the periodic boundary case discussed above). The friction parameter \mcode{f} means that some energy is lost during the propagation to the neighbours, i.e. for \mcode{f<1}, it corresponds to the dissipative case with an energy loss of $\Delta E=(1-f)E$, where $E$ is the value of the field for the conservative case (\mcode{f=1}).
+
+The basic code is rewritten here as
+\begin{lstlisting}
+c=0;
+for k=1:2*d
+  r(k)=rand(1);
+  E(vnn)=E(vnn)+r(k);
+  c=c+r(k);
+end
+E(v)=(E(v)-c)*f;
+\end{lstlisting}
+where \mcode{c} is the sum of the energy values that each nearest neighbour site \mcode{vnn} gained during the relaxation of the site \mcode{v}.
+
+The complete sandpile program for $d$-dimension is a bit more sophisticated, including the \emph{stack} method discussed before, with one difference that there is a stack for each parallel sites dropping caused by one initial toppling site. The whole structure is therefore similar to a ``tree of stacks'' . The advantage is that the lifetime of an avalanche can be counted directly.
+
+The generalization presented here makes the sandpile model a bit more realistic, although the number of digits is still finite. Hence, this case is equivalent to the discrete case, only with different propagation rules. Besides, the lattice sites are still discrete.

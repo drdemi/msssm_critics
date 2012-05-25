@@ -12,20 +12,28 @@
 \BOOKMARK [1][-]{section.2.3}{Abelian Model}{chapter.2}
 \BOOKMARK [0][-]{chapter.3}{Model Implementation in MATLAB/Octave}{}
 \BOOKMARK [1][-]{section.3.1}{Basic Sandpile Code}{chapter.3}
-\BOOKMARK [1][-]{section.3.2}{Simple Avalanche Code}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{Optimization of Avalanche Code}{chapter.3}
-\BOOKMARK [1][-]{section.3.4}{Statistics}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Optimization of Avalanche Code}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Statistics}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{The d-dimensional case}{chapter.3}
+\BOOKMARK [1][-]{section.3.5}{Continuous sandpile field}{chapter.3}
 \BOOKMARK [0][-]{chapter.4}{Simulation Results and Discussion}{}
-\BOOKMARK [1][-]{section.4.1}{Fractals}{chapter.4}
-\BOOKMARK [1][-]{section.4.2}{Power-law Distributions}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.2.1}{Periodic Boundary Conditions}{section.4.2}
-\BOOKMARK [2][-]{subsection.4.2.2}{Finite boundary conditions}{section.4.2}
-\BOOKMARK [2][-]{subsection.4.2.3}{Slowly Driven Test}{section.4.2}
-\BOOKMARK [0][-]{chapter.5}{Summary and Outlook}{}
-\BOOKMARK [1][-]{section.5.1}{Conclusion}{chapter.5}
-\BOOKMARK [0][-]{section*.23}{References}{}
+\BOOKMARK [1][-]{section.4.1}{Power-law Distributions}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.1.1}{Periodic Boundary Conditions}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.2}{Finite boundary conditions}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.3}{Distribution for small lattices}{section.4.1}
+\BOOKMARK [0][-]{chapter.5}{Conclusion and Outlook}{}
+\BOOKMARK [1][-]{section.5.1}{Summary}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Interpretation of SOC in ASM model}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Criticality}{chapter.5}
+\BOOKMARK [1][-]{section.5.4}{Self-organization}{chapter.5}
+\BOOKMARK [1][-]{section.5.5}{Final word on SOC and simulation}{chapter.5}
+\BOOKMARK [0][-]{section*.26}{References}{}
 \BOOKMARK [0][-]{appendix.A}{MATLAB/Octave-Code}{}
-\BOOKMARK [1][-]{section.A.1}{critical field}{appendix.A}
-\BOOKMARK [1][-]{section.A.2}{sandpile}{appendix.A}
-\BOOKMARK [1][-]{section.A.3}{avalanche distribution analysis}{appendix.A}
-\BOOKMARK [1][-]{section.A.4}{test sandpile}{appendix.A}
+\BOOKMARK [1][-]{section.A.1}{``critical field.m'' - random field generation}{appendix.A}
+\BOOKMARK [1][-]{section.A.2}{``sandpile.m'' - 2D sandpile model simulation, parametrized}{appendix.A}
+\BOOKMARK [1][-]{section.A.3}{``avalanche distribution analysis.m''}{appendix.A}
+\BOOKMARK [1][-]{section.A.4}{``test sandpile.m'' - sandpile simulation test environment}{appendix.A}
+\BOOKMARK [1][-]{section.A.5}{``abelian sandpile.m'' - n-dimensional sandpile simulation w. friction}{appendix.A}
+\BOOKMARK [1][-]{section.A.6}{``coordinate.m''}{appendix.A}
+\BOOKMARK [1][-]{section.A.7}{``linear index.m''}{appendix.A}
+\BOOKMARK [1][-]{section.A.8}{``neighbour.m''}{appendix.A}

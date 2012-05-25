@@ -9,10 +9,6 @@ A level-1 auxiliary file: chapter5_summary.aux
 The style file: plain.bst
 A level-1 auxiliary file: appendix.aux
 Database file #1: bibliography.bib
-Name 1 in "P. Helander, S. C. Chapman, R. O. Dendy, G. Rowlands, and N. W. Watkins" has a comma at the end for entry fractal_avalanching
-while executing---line 1049 of file plain.bst
-Too many commas in name 1 of "P. Helander, S. C. Chapman, R. O. Dendy, G. Rowlands, and N. W. Watkins" for entry fractal_avalanching
-while executing---line 1049 of file plain.bst
 Warning--empty journal in sandpile_models
 Warning--empty journal in christensen
 Warning--empty journal in ca_and_soc
@@ -20,54 +16,49 @@ Warning--empty journal in deepak
 Warning--empty year in deepak
 Warning--empty journal in abelian_sandpile_model
 Warning--empty year in abelian_sandpile_model
-Name 1 in "P. Helander, S. C. Chapman, R. O. Dendy, G. Rowlands, and N. W. Watkins" has a comma at the end for entry fractal_avalanching
-while executing---line 1090 of file plain.bst
-Too many commas in name 1 of "P. Helander, S. C. Chapman, R. O. Dendy, G. Rowlands, and N. W. Watkins" for entry fractal_avalanching
-while executing---line 1090 of file plain.bst
-Warning--empty journal in fractal_avalanching
 Warning--empty journal in soc
 Warning--empty journal in 1overf
 Warning--empty journal in sandpile_math
 Warning--empty journal in how_soc_works
-You've used 10 entries,
+You've used 9 entries,
             2118 wiz_defined-function locations,
-            541 strings with 5147 characters,
-and the built_in function-call counts, 2192 in all, are:
-= -- 198
-> -- 94
+            537 strings with 4995 characters,
+and the built_in function-call counts, 1951 in all, are:
+= -- 176
+> -- 81
 < -- 0
-+ -- 40
-- -- 28
-* -- 104
-:= -- 411
-add.period$ -- 28
-call.type$ -- 10
-change.case$ -- 44
++ -- 35
+- -- 24
+* -- 92
+:= -- 365
+add.period$ -- 25
+call.type$ -- 9
+change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 100
-empty$ -- 171
-format.name$ -- 28
-if$ -- 425
+cite$ -- 20
+duplicate$ -- 90
+empty$ -- 154
+format.name$ -- 24
+if$ -- 378
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 10
-newline$ -- 51
-num.names$ -- 20
-pop$ -- 68
+int.to.str$ -- 9
+missing$ -- 9
+newline$ -- 46
+num.names$ -- 18
+pop$ -- 61
 preamble$ -- 1
-purify$ -- 34
+purify$ -- 30
 quote$ -- 0
-skip$ -- 71
+skip$ -- 64
 stack$ -- 0
-substring$ -- 52
+substring$ -- 47
 swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 40
-warning$ -- 12
-while$ -- 20
-width$ -- 12
-write$ -- 88
-(There were 4 error messages)
+type$ -- 36
+warning$ -- 11
+while$ -- 18
+width$ -- 10
+write$ -- 79
+(There were 11 warnings)

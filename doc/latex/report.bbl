@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{sandpile_models}
 Alessandro~Vespignani Alain~Barrat and Stefano Zapperi.
@@ -23,11 +23,6 @@ Deepak Dhar.
 \bibitem{abelian_sandpile_model}
 Monwhea Jeng.
 \newblock The abelian sandpile model.
-
-\bibitem{fractal_avalanching}
-R.~O. Dendy G.~Rowlands P.~Helander, S. C.~Chapman and N.~W. Watkins.
-\newblock Exactly solvable sandpile with fractal avalanching.
-\newblock October 1998.
 
 \bibitem{soc}
 Kurt~Wiesenfeld Per~Bak, Chao~Tang.

@@ -1,13 +1,39 @@
-\chapter{Summary and Outlook}
+\chapter{Conclusion and Outlook}
 \thispagestyle{fancy}
 
-\section{Conclusion}
-SOC is still a vague phenomenology, involving many attempts to use it for explaining power-like distributions in real systems using computational models.
+\section{Summary}
+Self-Organized Criticality (SOC) was born as a new mechanism to produce power-law behaviour, as it is common in many complex systems. During the work on this paper, the aim was to understand the underlying idea behind the concept of SOC and the focus was on the Abelian Sandpile Model (ASM), as this is the simplest and the most popular model in the literature.
 
-From the studies of different cases of the abelian sandpile, it can be concluded that the continuous case, with a realistic field and friction in propagating the grains, the system bears a nice power-law like distribution for avalanche sizes, with a little worse fits for avalanche lifetimes. This case, independent of the boundary conditions, is also the more realistic one, therefore one might identify it with SOC. 
+A simulation environment of ASM has been created for the investigation of its properties and the simulation of the avalanche behaviour for different parameters of the model, e.g. the boundary conditions or the dimension of the cellular automation lattice. The observables of the avalanche size and lifetime were measured, which are claimed to obey power-law-like statistics in literature.
 
-In summary, \textbf{slowly driven} systems are associated with \textbf{dissipation} and a \textbf{local threshold} that leads to avalanche phenomena and SOC. The computational models provided in this paper bear these characteristics. Distinct specific laws might change only the critical exponent of the power-law distribution. 
+The results were, most of the time, close to power-law, especially for the avalanche size distribution. Nevertheless, these results do not necessarily give a good insight into the meaning of either self-organization nor criticality. In fact, despite the large amount of publication in this field, SOC is still a vague concept with many controversies. For example, many authors relate the power-law behaviour to fractal structure which is not proven, and seemingly, wrong.
 
-The cellullar automation models of sandpile is a convenient way of modeling real systems with the properties discussed.
 
-A deeper understanding of SOC, if it exists, definitely needs a mathematical framework (???).
+\section{Interpretation of SOC in ASM model}
+The cellular automaton of the ASM is always a discrete system, even implementing a continuous field is still limited by the size of decimal numbers. Therefore, there is a finite number of possible configurations. The critical behaviour is implemented by including the so-called \emph{avalanche effect}, meaning that there exists a critical value to the field that associated with each lattice point, where beyond it, the site gets relaxed obeying certain \emph{local} rules. In this case, the toppling site distributes grains to its nearest neighbours, which themselves might also be overcritical and relax. In general, we can say that the avalanche effect comes down to the existence of a critical value and a local propagation rule. Note: \emph{Local} does not necessarily imply relaxing a site to its nearest neighbours.
+
+The many different cases shown in this work, either open or close or periodic boundary condition with friction or not, all can be understood conceptually in the same way.
+
+The conclusion made here is that avalanches connect the set of configurations with one overcritical site to a set of subcritical configurations. As we have a finite number of configurations in total, an exact distribution of avalanche size or lifetime exists. The driving time, by adding grains (randomly or not) brings a subcritical state to an overcritical state. Hence, running the simulation for long enough, all finite configurations could be passed, and the measured distribution would be accurate.
+
+Simulating a small lattice with a driving time comparable with the total number of possible critical configurations in 2, 3 and 4 dimensions leads to a striking result: the distribution seems to fit less a power-law, but more a kind of an exponential law.
+
+How can this result relate to the power-law results obtained for the many other cases that were dealt with? In all these cases, either large lattices or friction or continuous grain size were introduced. Indeed, all these small changes to the model are equivalent to a discrete lattice with different local rules, but they share a common thing: an increase in the number of critical and also subcritical or \emph{metastable} configurations. As the random energy addition and dissipation evolves and oscillates to some constant average value, the total \emph{exact} distribution cannot be reproduced, unless using a large total driving time comparable with all possible configurations of the system, which is a combinatorial number. Hence, for large lattices it is computationally impossible and the result is limited to small or medium size avalanches. The power-law distribution is a good approximation for this part. The different cases just specify a particular way to connect the set of critical configurations to the subcritical set.
+
+It should be possible to treat the problem analytically exploiting the symmetry of the lattice, and to deduce a general large lattice law, probably tending to a power-law approximation, as this will correspond to reducing the 'finite size' effect, i.e. the 'continuous' limit. 
+
+\section{Criticality}
+The meaning of criticality is a concept borrowed from thermodynamic systems that undergo a second order phase transition (e.g. spontaneous magnetization below Curie temperature), which imply the correlation length to diverge, i.e. the whole system, independent of size, behaves in the same way, hence there is no characteristic scale during the phase transition.
+
+For the ASM, no such phenomenon could be observed. What has been seen here is a metastable configuration that goes critical after receiving an external input and then relaxes to another metastable configuration, keeping in mind that there is a large number of such configurations. The avalanches connect to each other, as we discussed, so no criticality is concluded here in the sense of thermodynamic systems.
+
+\section{Self-organization}
+The system does not self-organize itself to a particularly interesting state, as in the case of magnetization, where all the pins point to one direction. In fact, if one always inputs the grains in the same site, it can be proven that there exists a limit cycle, i.e. there is a finite number of configurations that repeat themselves infinitely. Hence, we might also refute the self-organization hypothesis, as the system needs external input to organize to a critical state, its relaxation just giving one of many metastable subcritical states.
+
+\section{Final word on SOC and simulation}
+All in all, the term SOC might not seem very appropriate. Nevertheless, this model is useful to understand many real systems in nonequilibrium. Systems in nonequilibrium are open systems, i.e. they receive external input. Because of this, they might undergo different metastable states, especially for large but slowly driven systems with possibilities of dissipation (avalanche). Consider for example the earthquake model, where the earthquake is the avalanche of the system, that releases energy when it finishes and brings the system back to a metastable state; then the system will be slowly driven again to a critical state, and so on and so forth. The statistics of earthquakes size will follow a power-law distribution. Note as well that this system would be considered continuous.
+
+In conclusion, slowly driven systems with avalanche phenomena can be modelled by computational sandpile models, and we can refer to this kind of systems as SOC systems. However, the name of SOC is not necessarily appropriate, as the system is slowly driven to a critical state that relaxes itself with an avalanche phenomenon, and the process is repeated again. The statistics of avalanche for such a continuous system seem to exhibit power-laws, as it is checked by computer simulations.
+
+
+
